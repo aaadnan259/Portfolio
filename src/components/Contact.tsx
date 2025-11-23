@@ -16,12 +16,31 @@ export default function Contact() {
         e.preventDefault();
         setStatus("submitting");
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus("success");
-            setFormData({ name: "", email: "", message: "" });
-            setTimeout(() => setStatus("idle"), 3000);
-        }, 1500);
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setStatus("success");
+                setFormData({ name: "", email: "", message: "" });
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                setStatus("error");
+                console.error("Error:", data.error);
+                setTimeout(() => setStatus("idle"), 5000);
+            }
+        } catch (error) {
+            setStatus("error");
+            console.error("Error submitting form:", error);
+            setTimeout(() => setStatus("idle"), 5000);
+        }
     };
 
     return (
@@ -143,7 +162,9 @@ export default function Contact() {
                                 {status === "submitting" ? (
                                     "Sending..."
                                 ) : status === "success" ? (
-                                    "Message Sent!"
+                                    "Message Sent! ✓"
+                                ) : status === "error" ? (
+                                    "Failed to Send - Try Again"
                                 ) : (
                                     <>
                                         Send Message

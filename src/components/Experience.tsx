@@ -34,10 +34,25 @@ const experiences = [
     },
 ];
 
+import DotGrid from "./DotGrid";
+
 export default function Experience() {
     return (
         <section id="experience" className="py-20 bg-background relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="absolute inset-0 z-0 opacity-30">
+                <DotGrid
+                    dotSize={10}
+                    gap={15}
+                    baseColor="#5227FF"
+                    activeColor="#5227FF"
+                    proximity={120}
+                    shockRadius={250}
+                    shockStrength={5}
+                    resistance={750}
+                    returnDuration={1.5}
+                />
+            </div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -96,3 +111,4 @@ export default function Experience() {
         </section>
     );
 }
+
