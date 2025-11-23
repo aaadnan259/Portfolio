@@ -47,13 +47,13 @@ export default function Skills() {
                             className="bg-surface/30 p-6 rounded-xl border border-surface hover:border-primary/30 transition-colors"
                         >
                             <h3 className="text-xl font-bold text-primary mb-6 text-center">{skillGroup.category}</h3>
-                            <ul className="space-y-3">
+                            <div className="flex flex-wrap gap-3 justify-center">
                                 {skillGroup.items.map((item, i) => (
-                                    <li key={i} className="flex items-center justify-center text-text/80 bg-surface rounded-lg py-2 px-3 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors cursor-default">
+                                    <span key={i} className="px-3 py-1.5 bg-surface text-text/80 rounded-full text-sm font-medium border border-surface hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-colors cursor-default">
                                         {item}
-                                    </li>
+                                    </span>
                                 ))}
-                            </ul>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

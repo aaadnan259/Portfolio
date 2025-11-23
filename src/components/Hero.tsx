@@ -58,7 +58,7 @@ export default function Hero() {
                     </Link>
                     <Link
                         href="#contact"
-                        className="px-8 py-3 border border-surface hover:border-primary/50 bg-surface/50 hover:bg-surface text-text rounded-full font-medium transition-all flex items-center gap-2"
+                        className="px-8 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-full font-medium transition-all hover:brightness-110 hover:scale-105"
                     >
                         Contact Me
                     </Link>
