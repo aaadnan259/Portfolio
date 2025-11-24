@@ -1,69 +1,13 @@
 "use client";
 
 import React from "react";
+import "./BlobBackground.css";
 
 export default function BlobBackground() {
     return (
-        <>
-            <style jsx global>{`
-        :root {
-          /* Fetch exact values from site styles */
-          --grad-start: var(--color-primary);
-          --grad-end: var(--color-secondary);
-          
-          /* Programmatic darken/desaturate */
-          --anim-start: color-mix(in srgb, var(--grad-start) 70%, black 30%);
-          --anim-end: color-mix(in srgb, var(--grad-end) 70%, black 30%);
-          
-          /* Final opacity for layer blending */
-          --anim-opacity: 0.07;
-        }
-
-        .experience-animation {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-          z-index: 0;
-          opacity: var(--anim-opacity);
-          mix-blend-mode: soft-light;
-          will-change: transform, opacity;
-          contain: paint;
-        }
-
-        .experience-animation .blob {
-          position: absolute;
-          width: 50vmax;
-          height: 50vmax;
-          top: -10%;
-          left: -10%;
-          border-radius: 50%;
-          background: radial-gradient(circle at 30% 30%, var(--anim-start), transparent 40%),
-                      radial-gradient(circle at 70% 70%, var(--anim-end), transparent 40%);
-          filter: blur(40px);
-          transform-origin: center;
-          animation: blob-morph 6s infinite linear;
-          animation-timing-function: cubic-bezier(.22,.9,.38,.98);
-        }
-
-        @keyframes blob-morph {
-          0%   { transform: translate3d(0,0,0) scale(1); opacity: 0.9; }
-          25%  { transform: translate3d(8%, -5%, 0) scale(1.05); opacity: 0.95; }
-          50%  { transform: translate3d(-6%, 6%, 0) scale(0.95); opacity: 0.9; }
-          75%  { transform: translate3d(4%, -3%, 0) scale(1.02); opacity: 0.92; }
-          100% { transform: translate3d(0,0,0) scale(1); opacity: 0.9; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .experience-animation,
-          .experience-animation .blob {
-            animation: none !important;
-            opacity: 0.02;
-          }
-        }
-      `}</style>
-            <div className="experience-animation">
-                <div className="blob" />
-            </div>
-        </>
+        <div className="experience-animation">
+            <div className="blob" />
+        </div>
     );
 }
+
