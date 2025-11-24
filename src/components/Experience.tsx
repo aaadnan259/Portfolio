@@ -1,13 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
-
+import Image from "next/image";
 import { experiences } from "@/data/portfolio";
+import DotGrid from "@/components/DotGrid";
 
 export default function Experience() {
     return (
         <section id="experience" className="py-20 bg-background relative overflow-hidden">
+            {/* Background animation */}
+            <div className="absolute inset-0 -z-10 h-full w-full">
+                <DotGrid
+                    dotSize={10}
+                    gap={15}
+                    baseColor="#5227FF"
+                    activeColor="#5227FF"
+                    proximity={120}
+                    shockRadius={250}
+                    shockStrength={5}
+                    resistance={750}
+                    returnDuration={1.5}
+                />
+            </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -50,11 +64,13 @@ export default function Experience() {
                                         <h3 className="text-xl font-bold text-text-light mb-1">{exp.title}</h3>
                                         <div className="flex items-center gap-3 mb-4">
                                             {exp.logo && (
-                                                <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center p-1">
-                                                    <img
+                                                <div className="relative w-8 h-8 bg-white rounded-md flex items-center justify-center p-1 overflow-hidden">
+                                                    <Image
                                                         src={exp.logo}
                                                         alt={`${exp.company} logo`}
-                                                        className="w-full h-full object-contain"
+                                                        fill
+                                                        className="object-contain p-1"
+                                                        sizes="32px"
                                                     />
                                                 </div>
                                             )}
