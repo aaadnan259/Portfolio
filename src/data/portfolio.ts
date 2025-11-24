@@ -17,6 +17,7 @@ export const experiences: ExperienceItem[] = [
             "Installed and configured network-based security camera systems."
         ],
         icon: Briefcase,
+        logo: "/images/codeecho.webp",
     },
     {
         title: "Bachelor of Science (B.S.) Computer Science Engineering Technology",
@@ -24,11 +25,12 @@ export const experiences: ExperienceItem[] = [
         location: "Toledo, OH",
         date: "Expected Graduation: December 2025",
         description: [
-            "GPA: 3.3; College of Engineering Dean’s List",
+            "GPA: 3.3; College of Engineering Dean's List",
             "Activities: Alpha Lambda Mu President, Alpha Lambda Mu Secretary, P.E.A.C.E. Project Mentor",
             "Relevant Coursework: Object Oriented Programming, Algorithms, Computer Networks, Operating Systems, Senior Technology Capstone"
         ],
         icon: GraduationCap,
+        logo: "/images/utoledo.webp",
     },
 ];
 
@@ -80,7 +82,7 @@ export const skills: SkillGroup[] = [
             { name: "JavaScript", icon: "devicon-javascript-plain" },
             { name: "C", icon: "devicon-c-plain" },
             { name: "HTML/CSS", icon: "devicon-html5-plain" },
-            { name: "SQL", icon: "devicon-postgresql-plain" } // Using postgres as generic SQL icon
+            { name: "SQL", icon: "devicon-postgresql-plain" }
         ]
     },
     {
@@ -107,9 +109,9 @@ export const skills: SkillGroup[] = [
     {
         category: "Concepts",
         items: [
-            { name: "RESTful APIs", icon: "devicon-networkx-plain" }, // Generic network icon or similar
-            { name: "Machine Learning", icon: "devicon-tensorflow-original" }, // Using TF as proxy
-            { name: "NLP", icon: "devicon-python-plain" }, // Reuse python or generic
+            { name: "RESTful APIs", icon: "devicon-networkx-plain" },
+            { name: "Machine Learning", icon: "devicon-tensorflow-original" },
+            { name: "NLP", icon: "devicon-python-plain" },
             { name: "Data Analytics", icon: "devicon-pandas-plain" },
             { name: "Agile/Scrum", icon: "devicon-jira-plain" },
             { name: "OOP", icon: "devicon-java-plain" }

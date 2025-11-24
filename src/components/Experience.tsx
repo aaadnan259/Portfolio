@@ -48,7 +48,18 @@ export default function Experience() {
                                             {exp.date}
                                         </span>
                                         <h3 className="text-xl font-bold text-text-light mb-1">{exp.title}</h3>
-                                        <h4 className="text-lg text-text/80 mb-4">{exp.company} | {exp.location}</h4>
+                                        <div className="flex items-center gap-3 mb-4">
+                                            {exp.logo && (
+                                                <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center p-1">
+                                                    <img
+                                                        src={exp.logo}
+                                                        alt={`${exp.company} logo`}
+                                                        className="w-full h-full object-contain"
+                                                    />
+                                                </div>
+                                            )}
+                                            <h4 className="text-lg text-text/80">{exp.company} | {exp.location}</h4>
+                                        </div>
                                         <ul className="space-y-2">
                                             {exp.description.map((item, i) => (
                                                 <li key={i} className="flex items-start gap-2 text-text/70 text-sm">

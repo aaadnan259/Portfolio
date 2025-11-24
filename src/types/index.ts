@@ -7,6 +7,7 @@ export interface ExperienceItem {
     date: string;
     description: string[];
     icon: LucideIcon;
+    logo?: string;
 }
 
 export interface ProjectLinks {
