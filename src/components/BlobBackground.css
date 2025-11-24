@@ -11,60 +11,65 @@
     --anim-start: color-mix(in srgb, var(--grad-start) 70%, black 30%);
     --anim-end: color-mix(in srgb, var(--grad-end) 70%, black 30%);
 
-    /* Final opacity for layer blending */
-    --anim-opacity: 0.07;
+    /* Final opacity for layer blending - Increased for visibility */
+    --anim-opacity: 0.15;
 }
 
 .experience-animation {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
+    /* Ensure it's above the background but below content (z-10) */
     opacity: var(--anim-opacity);
-    mix-blend-mode: soft-light;
+    mix-blend-mode: normal;
+    /* Changed from soft-light to normal for testing visibility, or overlay */
     will-change: transform, opacity;
     contain: paint;
 }
 
 .experience-animation .blob {
     position: absolute;
-    width: 50vmax;
-    height: 50vmax;
+    width: 60vmax;
+    /* Made slightly larger */
+    height: 60vmax;
     top: -10%;
     left: -10%;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, var(--anim-start), transparent 40%),
-        radial-gradient(circle at 70% 70%, var(--anim-end), transparent 40%);
-    filter: blur(40px);
+    /* Hardcoded gradient to ensure visibility if vars fail */
+    background: radial-gradient(circle at 30% 30%, #0056b3, transparent 50%),
+        radial-gradient(circle at 70% 70%, #3d8bfd, transparent 50%);
+    filter: blur(60px);
     transform-origin: center;
-    animation: blob-morph 6s infinite linear;
+    animation: blob-morph 8s infinite linear;
+    /* Slowed down slightly */
     animation-timing-function: cubic-bezier(.22, .9, .38, .98);
 }
 
 @keyframes blob-morph {
     0% {
         transform: translate3d(0, 0, 0) scale(1);
-        opacity: 0.9;
+        opacity: 0.8;
     }
 
     25% {
-        transform: translate3d(8%, -5%, 0) scale(1.05);
-        opacity: 0.95;
+        transform: translate3d(10%, -5%, 0) scale(1.1);
+        opacity: 1;
     }
 
     50% {
-        transform: translate3d(-6%, 6%, 0) scale(0.95);
-        opacity: 0.9;
+        transform: translate3d(-5%, 10%, 0) scale(0.9);
+        opacity: 0.8;
     }
 
     75% {
-        transform: translate3d(4%, -3%, 0) scale(1.02);
-        opacity: 0.92;
+        transform: translate3d(5%, -5%, 0) scale(1.05);
+        opacity: 0.9;
     }
 
     100% {
         transform: translate3d(0, 0, 0) scale(1);
-        opacity: 0.9;
+        opacity: 0.8;
     }
 }
 
@@ -73,6 +78,6 @@
     .experience-animation,
     .experience-animation .blob {
         animation: none !important;
-        opacity: 0.02;
+        opacity: 0.05;
     }
 }
