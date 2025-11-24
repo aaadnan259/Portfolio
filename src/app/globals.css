@@ -4,13 +4,31 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --bg-color: #f3f4f6;
+  --surface-color: #ffffff;
+  --primary-color: #007BFF;
+  --secondary-color: #58A6FF;
+  --text-color: #1f2937;
+  --text-light-color: #111827;
+}
+
+.dark {
+  --bg-color: #0D1117;
+  --surface-color: #161B22;
+  --primary-color: #007BFF;
+  --secondary-color: #58A6FF;
+  --text-color: #C9D1D9;
+  --text-light-color: #FFFFFF;
+}
+
 @theme {
-  --color-background: #0D1117;
-  --color-surface: #161B22;
-  --color-primary: #007BFF;
-  --color-secondary: #58A6FF;
-  --color-text: #C9D1D9;
-  --color-text-light: #FFFFFF;
+  --color-background: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-text: var(--text-color);
+  --color-text-light: var(--text-light-color);
 
   --animate-fade-in: fadeIn 0.5s ease-in-out;
   --animate-slide-up: slideUp 0.5s ease-out;

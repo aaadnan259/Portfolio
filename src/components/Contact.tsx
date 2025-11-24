@@ -3,37 +3,50 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { cn } from "@/lib/utils";
+
+const formSchema = z.object({
+    name: z.string().min(2, "Name must be at least 2 characters"),
+    email: z.string().email("Please enter a valid email address"),
+    message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: ""
+    const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors, isSubmitting },
+    } = useForm<FormData>({
+        resolver: zodResolver(formSchema),
     });
-    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus("submitting");
-
+    const onSubmit = async (data: FormData) => {
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(data),
             });
 
-            const data = await response.json();
+            const result = await response.json();
 
             if (response.ok) {
                 setStatus("success");
-                setFormData({ name: "", email: "", message: "" });
+                reset();
                 setTimeout(() => setStatus("idle"), 5000);
             } else {
                 setStatus("error");
-                console.error("Error:", data.error);
+                console.error("Error:", result.error);
                 setTimeout(() => setStatus("idle"), 5000);
             }
         } catch (error) {
@@ -117,49 +130,61 @@ export default function Contact() {
                         transition={{ duration: 0.5 }}
                         className="bg-surface p-8 rounded-2xl border border-surface/50"
                     >
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-text/80 mb-2">Name</label>
                                 <input
                                     type="text"
                                     id="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                    className="w-full px-4 py-3 bg-background border border-surface rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30"
+                                    {...register("name")}
+                                    className={cn(
+                                        "w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30",
+                                        errors.name ? "border-red-500" : "border-surface"
+                                    )}
                                     placeholder="Your name"
                                 />
+                                {errors.name && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
+                                )}
                             </div>
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-text/80 mb-2">Email</label>
                                 <input
                                     type="email"
                                     id="email"
-                                    required
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full px-4 py-3 bg-background border border-surface rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30"
+                                    {...register("email")}
+                                    className={cn(
+                                        "w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30",
+                                        errors.email ? "border-red-500" : "border-surface"
+                                    )}
                                     placeholder="your@email.com"
                                 />
+                                {errors.email && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>
+                                )}
                             </div>
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-text/80 mb-2">Message</label>
                                 <textarea
                                     id="message"
-                                    required
                                     rows={4}
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full px-4 py-3 bg-background border border-surface rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30 resize-none"
+                                    {...register("message")}
+                                    className={cn(
+                                        "w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30 resize-none",
+                                        errors.message ? "border-red-500" : "border-surface"
+                                    )}
                                     placeholder="Your message..."
                                 />
+                                {errors.message && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
+                                )}
                             </div>
                             <button
                                 type="submit"
-                                disabled={status === "submitting"}
+                                disabled={isSubmitting}
                                 className="w-full py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                {status === "submitting" ? (
+                                {isSubmitting ? (
                                     "Sending..."
                                 ) : status === "success" ? (
                                     "Message Sent! ✓"
