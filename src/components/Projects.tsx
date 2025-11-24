@@ -3,15 +3,10 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
-import { useMemo } from "react";
 import ProjectCard from "./ProjectCard";
-import VideoPlayer from "./VideoPlayer";
 import { projects } from "@/data/portfolio";
 
 export default function Projects() {
-    const featuredProjects = useMemo(() => projects.filter(p => p.video), []);
-    const regularProjects = useMemo(() => projects.filter(p => !p.video), []);
-
     return (
         <section id="projects" className="py-20 bg-surface/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,7 +23,7 @@ export default function Projects() {
 
                 {/* Featured Projects with Video - Full Width */}
                 <div className="space-y-8 mb-8">
-                    {featuredProjects.map((project, index) => (
+                    {projects.filter(p => p.video).map((project, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
@@ -39,10 +34,19 @@ export default function Projects() {
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                                 {/* Video Container */}
-                                <VideoPlayer
-                                    src={project.video!}
-                                    className="group-hover:scale-105 transition-transform duration-300"
-                                />
+                                <div className="relative overflow-hidden bg-surface/20">
+                                    <video
+                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                    >
+                                        <source src={project.video} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-background/40 pointer-events-none" />
+                                </div>
 
                                 {/* Content Container */}
                                 <div className="p-8 flex flex-col justify-center">
@@ -85,7 +89,7 @@ export default function Projects() {
 
                 {/* Regular Projects - 2 Column Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {regularProjects.map((project, index) => (
+                    {projects.filter(p => !p.video).map((project, index) => (
                         <ProjectCard key={index} project={project} index={index} />
                     ))}
                 </div>

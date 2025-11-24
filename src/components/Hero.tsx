@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
@@ -27,14 +26,11 @@ export default function Hero() {
                         className="flex justify-center lg:justify-end order-2 lg:order-1"
                     >
                         <div className="relative">
-                            <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/20 relative">
-                                <Image
+                            <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/20">
+                                <img
                                     src="/images/headshot.webp"
                                     alt="Adnan Ashraf"
-                                    fill
-                                    className="object-cover"
-                                    priority
-                                    sizes="(max-width: 768px) 288px, 320px"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                             {/* Decorative ring */}
@@ -84,7 +80,7 @@ export default function Hero() {
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <a
-                                href="/resume.pdf"
+                                href="/Adnan_Ashraf_Resume.pdf"
                                 download
                                 className="px-8 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-full font-medium transition-all hover:brightness-110 hover:scale-105 flex items-center gap-2"
                             >
