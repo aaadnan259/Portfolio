@@ -10,6 +10,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-text overflow-x-hidden">
+      <Navbar />
       <Hero />
       <RevealOnScroll width="100%">
         <About />
