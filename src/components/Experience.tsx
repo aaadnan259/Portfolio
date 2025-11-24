@@ -3,36 +3,7 @@
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap } from "lucide-react";
 
-const experiences = [
-    {
-        title: "Software Developer and Project Manager Intern",
-        company: "Code Echo",
-        location: "Toledo, OH",
-        date: "July 2024 – Present",
-        description: [
-            "Designed, developed, and deployed responsive websites for local businesses using React, JavaScript, HTML, and CSS.",
-            "Engineered and integrated RESTful APIs to connect front-end components with back-end services.",
-            "Contributed to the design, coding, testing, and debugging of software applications using Java, Python, and C, reducing bug reports by 15%.",
-            "Authored comprehensive API documentation and maintained detailed internal code comments.",
-            "Collaborated in an Agile environment with a distributed team, participating in daily stand-ups and sprint planning.",
-            "Managed IT workspace migration for 'Toledo Recycle Services' with zero downtime.",
-            "Installed and configured network-based security camera systems."
-        ],
-        icon: Briefcase,
-    },
-    {
-        title: "Bachelor of Science (B.S.) Computer Science Engineering Technology",
-        company: "University of Toledo",
-        location: "Toledo, OH",
-        date: "Expected Graduation: December 2025",
-        description: [
-            "GPA: 3.3; College of Engineering Dean’s List",
-            "Activities: Alpha Lambda Mu President, Alpha Lambda Mu Secretary, P.E.A.C.E. Project Mentor",
-            "Relevant Coursework: Object Oriented Programming, Algorithms, Computer Networks, Operating Systems, Senior Technology Capstone"
-        ],
-        icon: GraduationCap,
-    },
-];
+import { experiences } from "@/data/portfolio";
 
 export default function Experience() {
     return (

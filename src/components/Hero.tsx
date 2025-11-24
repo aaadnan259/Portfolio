@@ -56,12 +56,14 @@ export default function Hero() {
                         View Projects
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
-                    <Link
-                        href="#contact"
-                        className="px-8 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-full font-medium transition-all hover:brightness-110 hover:scale-105"
+                    <a
+                        href="/Adnan_Ashraf_Resume.pdf"
+                        download
+                        className="px-8 py-3 bg-secondary hover:bg-secondary/90 text-white rounded-full font-medium transition-all hover:brightness-110 hover:scale-105 flex items-center gap-2"
                     >
-                        Contact Me
-                    </Link>
+                        Download Resume
+                        <Download size={18} />
+                    </a>
                 </motion.div>
             </div>
         </section>

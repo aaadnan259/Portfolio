@@ -2,24 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const skills = [
-    {
-        category: "Languages",
-        items: ["Python", "Java", "JavaScript", "C", "HTML/CSS", "SQL"]
-    },
-    {
-        category: "Frameworks & Libraries",
-        items: ["React", "Next.js", "Django", "Pandas", "Scikit-learn", "Tailwind CSS"]
-    },
-    {
-        category: "Tools & Platforms",
-        items: ["Git & GitHub", "Jira", "AWS", "VS Code", "PostgreSQL"]
-    },
-    {
-        category: "Concepts",
-        items: ["RESTful APIs", "Machine Learning", "NLP", "Data Analytics", "Agile/Scrum", "OOP"]
-    }
-];
+import { skills } from "@/data/portfolio";
 
 export default function Skills() {
     return (
@@ -49,8 +32,9 @@ export default function Skills() {
                             <h3 className="text-xl font-bold text-primary mb-6 text-center">{skillGroup.category}</h3>
                             <div className="flex flex-wrap gap-3 justify-center">
                                 {skillGroup.items.map((item, i) => (
-                                    <span key={i} className="px-3 py-1.5 bg-surface text-text/80 rounded-full text-sm font-medium border border-surface hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-colors cursor-default">
-                                        {item}
+                                    <span key={i} className="px-3 py-1.5 bg-surface text-text/80 rounded-full text-sm font-medium border border-surface hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-colors cursor-default flex items-center gap-2">
+                                        <i className={`${item.icon} text-lg`} />
+                                        {item.name}
                                     </span>
                                 ))}
                             </div>
