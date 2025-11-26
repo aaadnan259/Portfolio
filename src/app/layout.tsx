@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adnan Ashraf | Software Developer",
     description: "Portfolio of Adnan Ashraf, a Software Developer and Project Manager Intern.",
-    url: "https://adnanashraf.com", // Replace with actual URL if known, or keep generic
+    url: "https://adnanashraf.com", // Update with your actual domain
     siteName: "Adnan Ashraf Portfolio",
     locale: "en_US",
     type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Adnan Ashraf | Software Developer",
     description: "Portfolio of Adnan Ashraf, a Software Developer and Project Manager Intern.",
-    creator: "@aaadnan259", // Assuming from github handle, can be updated
+    creator: "@aaadnan259", // Update with your Twitter/X handle
   },
   robots: {
     index: true,
@@ -46,9 +46,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-      </head>
       <body className={cn(inter.className, "bg-background text-text")}>
         <Providers>
           <ScrollProgress />

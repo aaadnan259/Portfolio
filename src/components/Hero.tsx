@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
@@ -27,10 +28,13 @@ export default function Hero() {
                     >
                         <div className="relative">
                             <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/20">
-                                <img
+                                <Image
                                     src="/images/headshot.webp"
                                     alt="Adnan Ashraf"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    priority
+                                    sizes="(max-width: 768px) 288px, 320px"
+                                    className="object-cover"
                                 />
                             </div>
                             {/* Decorative ring */}
@@ -46,7 +50,7 @@ export default function Hero() {
                             transition={{ duration: 0.5 }}
                         >
                             <h2 className="text-primary font-medium text-lg mb-4 tracking-wide uppercase">
-                                Hello, I'm
+                                Hello, I&apos;m
                             </h2>
                             <h1 className="text-5xl md:text-7xl font-bold text-text-light mb-6 tracking-tight">
                                 Adnan Ashraf

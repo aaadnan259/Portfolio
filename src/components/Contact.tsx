@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
     email: z.string().email("Please enter a valid email address"),
-    message: z.string().min(10, "Message must be at least 10 characters"),
+    message: z.string().min(1, "Message is required"),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -79,10 +79,10 @@ export default function Contact() {
                         transition={{ duration: 0.5 }}
                         className="space-y-8"
                     >
-                        <h3 className="text-2xl font-bold text-text-light mb-6">Let's Connect</h3>
+                        <h3 className="text-2xl font-bold text-text-light mb-6">Let&apos;s Connect</h3>
                         <p className="text-text/80 text-lg leading-relaxed mb-8">
-                            I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
-                            I'll try my best to get back to you!
+                            I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi,
+                            I&apos;ll try my best to get back to you!
                         </p>
 
                         <div className="space-y-6">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
+import Image from "next/image";
 
 import { experiences } from "@/data/portfolio";
 
@@ -50,11 +50,13 @@ export default function Experience() {
                                         <h3 className="text-xl font-bold text-text-light mb-1">{exp.title}</h3>
                                         <div className="flex items-center gap-3 mb-4">
                                             {exp.logo && (
-                                                <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center p-1">
-                                                    <img
+                                                <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center p-1 relative">
+                                                    <Image
                                                         src={exp.logo}
                                                         alt={`${exp.company} logo`}
-                                                        className="w-full h-full object-contain"
+                                                        fill
+                                                        sizes="32px"
+                                                        className="object-contain"
                                                     />
                                                 </div>
                                             )}
