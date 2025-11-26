@@ -18,6 +18,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function Contact() {
     const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
 
     const {
         register,
@@ -42,17 +43,26 @@ export default function Contact() {
 
             if (response.ok) {
                 setStatus("success");
+                setErrorMessage("");
                 reset();
                 setTimeout(() => setStatus("idle"), 5000);
             } else {
                 setStatus("error");
+                setErrorMessage(result.error || "Something went wrong");
                 console.error("Error:", result.error);
-                setTimeout(() => setStatus("idle"), 5000);
+                setTimeout(() => {
+                    setStatus("idle");
+                    setErrorMessage("");
+                }, 5000);
             }
         } catch (error) {
             setStatus("error");
+            setErrorMessage("Network error. Please try again.");
             console.error("Error submitting form:", error);
-            setTimeout(() => setStatus("idle"), 5000);
+            setTimeout(() => {
+                setStatus("idle");
+                setErrorMessage("");
+            }, 5000);
         }
     };
 
@@ -179,24 +189,29 @@ export default function Contact() {
                                     <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>
                                 )}
                             </div>
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {isSubmitting ? (
-                                    "Sending..."
-                                ) : status === "success" ? (
-                                    "Message Sent! ✓"
-                                ) : status === "error" ? (
-                                    "Failed to Send - Try Again"
-                                ) : (
-                                    <>
-                                        Send Message
-                                        <Send size={18} />
-                                    </>
+                            <div className="space-y-2">
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {isSubmitting ? (
+                                        "Sending..."
+                                    ) : status === "success" ? (
+                                        "Message Sent! ✓"
+                                    ) : status === "error" ? (
+                                        "Failed to Send"
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <Send size={18} />
+                                        </>
+                                    )}
+                                </button>
+                                {errorMessage && (
+                                    <p className="text-sm text-red-500 text-center">{errorMessage}</p>
                                 )}
-                            </button>
+                            </div>
                         </form>
                     </motion.div>
                 </div>
