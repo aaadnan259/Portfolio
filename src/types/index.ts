@@ -22,6 +22,7 @@ export interface ProjectItem {
     tags: string[];
     links: ProjectLinks;
     video?: string;
+    image?: string;
 }
 
 export interface SkillItem {
