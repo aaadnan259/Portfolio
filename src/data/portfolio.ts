@@ -56,7 +56,8 @@ export const projects: ProjectItem[] = [
         description: "Built a conversational AI assistant using NLP libraries and ElevenLabs API. Engineered the assistant to perform tasks like setting reminders and answering queries with 95% accuracy.",
         tags: ["Python", "NLP", "ElevenLabs API", "NLTK", "spaCy"],
         links: { demo: "#", github: "https://github.com/aaadnan259/EchoBot" },
-        image: "/images/echobot-demo.jpg"
+        image: "/images/echobot-demo.jpg",
+        imagePosition: "right"
     },
     {
         title: "Wild Wings and Things",

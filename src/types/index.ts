@@ -23,6 +23,7 @@ export interface ProjectItem {
     links: ProjectLinks;
     video?: string;
     image?: string;
+    imagePosition?: "left" | "right";
 }
 
 export interface SkillItem {
