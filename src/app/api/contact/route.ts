@@ -1,11 +1,20 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { z } from "zod";
+import { escapeHtml } from "@/lib/utils";
+
+const contactSchema = z.object({
+    name: z.string().min(1, "Name is required").max(100, "Name is too long"),
+    email: z.string().email("Invalid email address"),
+    message: z.string().min(1, "Message is required").max(5000, "Message is too long"),
+});
 
 export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
+    const contactEmail = process.env.CONTACT_EMAIL;
 
-    if (!apiKey) {
-        console.error("RESEND_API_KEY is missing");
+    if (!apiKey || !contactEmail) {
+        console.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
@@ -16,41 +25,41 @@ export async function POST(request: Request) {
 
     try {
         const body = await request.json();
-        const { name, email, message } = body;
 
-        // Validate input
-        if (!name || !email || !message) {
+        // Validate input using Zod
+        const result = contactSchema.safeParse(body);
+
+        if (!result.success) {
+            // Return the first error message
+            const errorMessage = result.error.issues[0].message;
             return NextResponse.json(
-                { error: "Missing required fields" },
+                { error: errorMessage },
                 { status: 400 }
             );
         }
 
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            return NextResponse.json(
-                { error: "Invalid email address" },
-                { status: 400 }
-            );
-        }
+        const { name, email, message } = result.data;
+
+        // Sanitize inputs for HTML context
+        const safeName = escapeHtml(name);
+        const safeMessage = escapeHtml(message);
 
         // Send email using Resend
         const { data, error } = await resend.emails.send({
             from: "Portfolio Contact <onboarding@resend.dev>",
-            to: process.env.CONTACT_EMAIL || "aaadnan259@gmail.com",
-            subject: `New Contact Form Submission from ${name}`,
+            to: contactEmail,
+            subject: `New Contact Form Submission from ${safeName}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
                     <h2 style="color: #333; border-bottom: 2px solid #4F46E5; padding-bottom: 10px;">
                         New Contact Form Submission
                     </h2>
                     <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
-                        <p style="margin: 10px 0;"><strong>Name:</strong> ${name}</p>
+                        <p style="margin: 10px 0;"><strong>Name:</strong> ${safeName}</p>
                         <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
                         <p style="margin: 10px 0;"><strong>Message:</strong></p>
                         <div style="background-color: white; padding: 15px; border-left: 4px solid #4F46E5; margin-top: 10px;">
-                            ${message.replace(/\n/g, '<br>')}
+                            ${safeMessage.replace(/\n/g, '<br>')}
                         </div>
                     </div>
                     <p style="color: #666; font-size: 12px; margin-top: 30px;">

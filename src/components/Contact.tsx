@@ -9,9 +9,9 @@ import * as z from "zod";
 import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
-    name: z.string().min(2, "Name must be at least 2 characters"),
+    name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
     email: z.string().email("Please enter a valid email address"),
-    message: z.string().min(1, "Message is required"),
+    message: z.string().min(1, "Message is required").max(5000, "Message must be less than 5000 characters"),
 });
 
 type FormData = z.infer<typeof formSchema>;
