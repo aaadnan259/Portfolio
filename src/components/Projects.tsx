@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/portfolio";
 
@@ -47,10 +48,11 @@ export default function Projects() {
                                             Your browser does not support the video tag.
                                         </video>
                                     ) : (
-                                        <img
-                                            src={project.image}
+                                        <Image
+                                            src={project.image || ""}
                                             alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                            fill
+                                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                                         />
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-background/40 pointer-events-none" />

@@ -147,6 +147,7 @@ export default function Contact() {
                                     type="text"
                                     id="name"
                                     {...register("name")}
+                                    suppressHydrationWarning
                                     className={cn(
                                         "w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30",
                                         errors.name ? "border-red-500" : "border-surface"
@@ -163,6 +164,7 @@ export default function Contact() {
                                     type="email"
                                     id="email"
                                     {...register("email")}
+                                    suppressHydrationWarning
                                     className={cn(
                                         "w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30",
                                         errors.email ? "border-red-500" : "border-surface"
@@ -179,6 +181,7 @@ export default function Contact() {
                                     id="message"
                                     rows={4}
                                     {...register("message")}
+                                    suppressHydrationWarning
                                     className={cn(
                                         "w-full px-4 py-3 bg-background border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-text placeholder:text-text/30 resize-none",
                                         errors.message ? "border-red-500" : "border-surface"

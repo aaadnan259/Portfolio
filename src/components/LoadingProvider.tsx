@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { WelcomeScreen } from './WelcomeScreen';
 
 export const LoadingProvider = ({ children }: { children: React.ReactNode }) => {

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { POST } from "../../src/app/api/contact/route";
-import { NextResponse } from "next/server";
+
 
 // Mock Resend
 const mocks = vi.hoisted(() => ({

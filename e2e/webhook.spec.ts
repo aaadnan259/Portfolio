@@ -16,7 +16,7 @@ test.describe('Webhook API Smoke Test', () => {
         let body;
         try {
             body = await response.json();
-        } catch (e) {
+        } catch {
             body = {};
         }
 
