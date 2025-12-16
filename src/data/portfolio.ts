@@ -23,7 +23,7 @@ export const experiences: ExperienceItem[] = [
         title: "Bachelor of Science (B.S.) Computer Science Engineering Technology",
         company: "University of Toledo",
         location: "Toledo, OH",
-        date: "Expected Graduation: December 2025",
+        date: "Graduated: December 2025",
         description: [
             "GPA: 3.3; College of Engineering Dean's List",
             "Activities: Alpha Lambda Mu President, Alpha Lambda Mu Secretary, P.E.A.C.E. Project Mentor",
