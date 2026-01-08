@@ -55,7 +55,7 @@ export default function Hero() {
                                 Adnan Ashraf
                             </h1>
                             <h3 className="text-2xl md:text-3xl text-text mb-8 font-light">
-                                Software Developer & <span className="text-secondary">Project Manager Intern</span>
+                                <span className="text-secondary">AI / Machine Learning Engineer</span>
                             </h3>
                         </motion.div>
 
@@ -65,8 +65,7 @@ export default function Hero() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg text-text/80 mb-10 leading-relaxed"
                         >
-                            I build responsive, user-friendly websites and robust software applications.
-                            Passionate about full-stack development, AI, and creating seamless digital experiences.
+                            I build production-grade Generative AI systems, RAG pipelines, and backend services that translate machine learning into measurable business value. I focus on scalable, reliable systems from API design to deployment.
                         </motion.p>
 
                         <motion.div

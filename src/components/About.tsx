@@ -15,7 +15,7 @@ export default function About() {
                 >
                     <h2 className="text-3xl md:text-4xl font-bold text-text-light mb-8">About Me</h2>
                     <p className="text-lg text-text/90 leading-[1.6]">
-                        I am a Computer Science Engineering Technology student at the University of Toledo (Expected Dec 2025), passionate about building scalable, full-stack web solutions. As a Software Developer Intern, I have hands-on experience engineering RESTful APIs, optimizing front-end performance with React, and deploying applications in Agile environments. I thrive on solving complex algorithmic challenges using Python and Java, and I am dedicated to leveraging cloud technologies and AI integration to create impactful digital experiences.
+                        I am a Computer Science graduate from the University of Toledo (Dec 2025), specializing in building production-ready Generative AI systems and scalable backend services. As a Software Engineering Intern, I architected Python-based microservices and REST APIs, optimizing workflows for 50+ daily active users. I have a proven track record of delivering AI-augmented automation, reducing operational tasks by ~30%, and ensuring zero-downtime migrations for critical business operations.
                     </p>
                 </motion.div>
             </div>
