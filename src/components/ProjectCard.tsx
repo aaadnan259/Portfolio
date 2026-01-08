@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { ProjectItem } from "@/types";
 
 interface ProjectCardProps {
@@ -17,31 +18,57 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group bg-background border border-surface rounded-xl overflow-hidden hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02]"
+            className="group bg-background border border-surface rounded-xl overflow-hidden hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] flex flex-col h-full"
         >
-            <div className="p-8">
+            <div className="relative h-48 w-full overflow-hidden bg-surface/50">
+                {project.video ? (
+                    <video
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    >
+                        <source src={project.video} type="video/mp4" />
+                    </video>
+                ) : (
+                    <Image
+                        src={project.image || "/images/placeholder.jpg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60" />
+            </div>
+
+            <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                     <div>
-                        <h3 className="text-2xl font-bold text-text-light group-hover:text-primary transition-colors">
+                        <h3 className="text-xl font-bold text-text-light group-hover:text-primary transition-colors">
                             {project.title}
                         </h3>
                         <p className="text-sm text-primary/80 font-medium">{project.subtitle}</p>
                     </div>
-                    <div className="flex gap-3">
-                        <Link href={project.links.github} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Source Code">
-                            <Github size={20} />
-                        </Link>
-                        <Link href={project.links.demo} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Live Demo">
-                            <ExternalLink size={20} />
-                        </Link>
+                    <div className="flex gap-3 shrink-0">
+                        {project.links.github && (
+                            <Link href={project.links.github} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Source Code">
+                                <Github size={20} />
+                            </Link>
+                        )}
+                        {project.links.demo && (
+                            <Link href={project.links.demo} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Live Demo">
+                                <ExternalLink size={20} />
+                            </Link>
+                        )}
                     </div>
                 </div>
 
-                <p className="text-text/80 mb-6 leading-relaxed">
+                <p className="text-text/80 mb-6 leading-relaxed text-sm flex-grow">
                     {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                     {project.tags.map((tag, i) => (
                         <span
                             key={i}
