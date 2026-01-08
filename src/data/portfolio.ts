@@ -3,18 +3,16 @@ import { ExperienceItem, ProjectItem, SkillGroup } from "@/types";
 
 export const experiences: ExperienceItem[] = [
     {
-        title: "Software Developer and Project Manager Intern",
+        title: "Software Engineering Intern",
         company: "Code Echo",
         location: "Toledo, OH",
         date: "July 2024 – Present",
         description: [
+            "Architected Python-based microservices and REST APIs, optimizing workflows for 50+ daily active users.",
+            "Reduced operational tasks by ~30% through AI-augmented automation.",
+            "Ensured zero-downtime migrations for critical business operations.",
             "Designed, developed, and deployed responsive websites for local businesses using React, JavaScript, HTML, and CSS.",
-            "Engineered and integrated RESTful APIs to connect front-end components with back-end services.",
-            "Contributed to the design, coding, testing, and debugging of software applications using Java, Python, and C, reducing bug reports by 15%.",
-            "Authored comprehensive API documentation and maintained detailed internal code comments.",
-            "Collaborated in an Agile environment with a distributed team, participating in daily stand-ups and sprint planning.",
-            "Managed IT workspace migration for 'Toledo Recycle Services' with zero downtime.",
-            "Installed and configured network-based security camera systems."
+            "Contributed to the design, coding, testing, and debugging of software applications using Java, Python, and C, reducing bug reports by 15%."
         ],
         icon: Briefcase,
         logo: "/images/codeecho.webp",
@@ -36,42 +34,36 @@ export const experiences: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
     {
-        title: "Generative AI Artwork",
-        subtitle: "Real-Time Metaball Fluid Visuals for Raspberry Pi",
-        description: "A fully-optimized generative art engine designed specifically for Raspberry Pi 4/5. Renders real-time metaball fluid visuals using NumPy-accelerated field calculations, a custom Pi-friendly render pipeline, threaded autosaving, and an optional gallery slideshow/video mode. Built for 24/7 art installations, digital galleries, senior design expos, and generative display walls.",
-        tags: ["Python", "NumPy", "Raspberry Pi", "OpenCV", "Computer Vision", "Real-Time Graphics"],
-        links: { demo: "#", github: "https://github.com/aaadnan259/Generative-AI-Artwork" },
-        video: "/videos/generative-art-demo.mp4"
+        title: "EchoBot",
+        subtitle: "AI Voice Powered Virtual Assistant",
+        description: "Architected a real-time AI microservice and Top-K RAG pipeline using Google Gemini's 1M+ token context. Achieved <200ms latency handling 100+ concurrent sessions.",
+        tags: ["Python", "Generative AI", "RAG", "FastAPI", "ChromaDB"],
+        links: { demo: "#", github: "https://github.com/aaadnan259/EchoBot" },
+        image: "/images/echobot-demo.jpg",
+    },
+    {
+        title: "GraphRAG Engine",
+        subtitle: "Hybrid Knowledge Graph Retrieval",
+        description: "Designed a hybrid retrieval engine using Neo4j and ChromaDB to merge vector search with graph traversal. Implemented async ingestion with Gemini, optimizing entity extraction throughput.",
+        tags: ["Python", "Neo4j", "LangChain", "RAG", "ChromaDB"],
+        links: { demo: "#", github: "#" },
+        image: "/images/graphrag.jpg",
     },
     {
         title: "IntelliStock",
         subtitle: "AI Powered Inventory Management System",
-        description: "Architected a full-stack inventory management application providing real-time stock tracking and data visualization. Implemented predictive ordering using scikit-learn to forecast future needs.",
+        description: "Developed a Linear Regression forecasting engine (accuracy 65%→85%) and scalable data pipeline. Optimized database performance to reduce query overhead by ~98%.",
         tags: ["Python", "Django", "React", "PostgreSQL", "Scikit-learn"],
-        links: { demo: "#", github: "#" }
+        links: { demo: "#", github: "#" },
+        image: "/images/intellistock.jpg",
     },
     {
-        title: "EchoBot",
-        subtitle: "AI Voice Powered Virtual Assistant",
-        description: "Built a conversational AI assistant using NLP libraries and ElevenLabs API. Engineered the assistant to perform tasks like setting reminders and answering queries with 95% accuracy.",
-        tags: ["Python", "NLP", "ElevenLabs API", "NLTK", "spaCy"],
-        links: { demo: "#", github: "https://github.com/aaadnan259/EchoBot" },
-        image: "/images/echobot-demo.jpg",
-        imagePosition: "right"
-    },
-    {
-        title: "Wild Wings and Things",
-        subtitle: "Local Business Website",
-        description: "Designed and deployed a responsive, user-friendly website for a local business, ensuring a modern digital presence.",
-        tags: ["React", "JavaScript", "HTML", "CSS"],
-        links: { demo: "#", github: "#" }
-    },
-    {
-        title: "Rocky Ridge Development",
-        subtitle: "Real Estate Development Site",
-        description: "Developed a professional website for a development company, focusing on showcasing their portfolio and services.",
-        tags: ["React", "JavaScript", "HTML", "CSS"],
-        links: { demo: "#", github: "#" }
+        title: "Generative Metaball Engine",
+        subtitle: "Real-Time Fluid Visuals",
+        description: "Senior Design Capstone Award Winner. Achieved ~100x performance speedup using NumPy vectorization and multithreading for real-time 24/7 autonomous operation.",
+        tags: ["Python", "NumPy", "Raspberry Pi", "OpenCV", "Computer Vision"],
+        links: { demo: "#", github: "https://github.com/aaadnan259/Generative-AI-Artwork" },
+        image: "/images/metaball.jpg",
     }
 ];
 
