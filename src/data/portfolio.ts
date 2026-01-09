@@ -38,7 +38,7 @@ export const projects: ProjectItem[] = [
         subtitle: "AI Voice Powered Virtual Assistant",
         description: "Architected a real-time AI microservice and Top-K RAG pipeline using Google Gemini's 1M+ token context. Achieved <200ms latency handling 100+ concurrent sessions.",
         tags: ["Python", "Generative AI", "RAG", "FastAPI", "ChromaDB"],
-        links: { demo: "", github: "https://github.com/aaadnan259/EchobotVoiceAssistant" },
+        links: { demo: "https://echobot-sics.onrender.com", github: "https://github.com/aaadnan259/EchobotVoiceAssistant" },
         image: "/images/echobot-demo.jpg?v=2",
     },
     {
