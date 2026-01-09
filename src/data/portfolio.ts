@@ -64,7 +64,7 @@ export const projects: ProjectItem[] = [
         tags: ["Python", "NumPy", "Raspberry Pi", "OpenCV", "Computer Vision"],
         links: { demo: "#", github: "https://github.com/aaadnan259/Generative-AI-Artwork" },
         image: "/images/metaball.jpg",
-        video: "/videos/generative-art-demo.mp4",
+        video: "/videos/generative-art-demo.mp4?v=2",
     }
 ];
 
