@@ -55,7 +55,7 @@ export const projects: ProjectItem[] = [
         description: "Developed a Linear Regression forecasting engine (accuracy 65%→85%) and scalable data pipeline. Optimized database performance to reduce query overhead by ~98%.",
         tags: ["Python", "Django", "React", "PostgreSQL", "Scikit-learn"],
         links: { demo: "#", github: "#" },
-        image: "/images/intellistock.jpg",
+        image: "/images/intellistock.jpg?v=2",
     },
     {
         title: "Generative Metaball Engine",
