@@ -3,6 +3,11 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      RESEND_API_KEY: re_mock_key_123456
+      WEBHOOK_SECRET: test_secret
+      CONTACT_EMAIL: test@example.com
+      NEXT_PUBLIC_BASE_URL: http://localhost:3000
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
