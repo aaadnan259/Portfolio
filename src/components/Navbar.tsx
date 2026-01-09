@@ -21,21 +21,23 @@ export default function Navbar() {
     const [activeSection, setActiveSection] = useState("home");
 
     useEffect(() => {
-        const handleScroll = () => {
-            const sections = navLinks.map(link => link.href.substring(1));
-            const scrollPosition = window.scrollY + 100; // Offset for navbar height
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
-                    setActiveSection(section);
-                    break;
-                }
-            }
-        };
+        navLinks.forEach((link) => {
+            const section = document.getElementById(link.href.substring(1));
+            if (section) observer.observe(section);
+        });
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => observer.disconnect();
     }, []);
 
     return (
