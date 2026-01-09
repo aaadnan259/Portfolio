@@ -11,12 +11,13 @@ import { LoadingProvider } from "@/components/LoadingProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://adnanashraf.dev'),
   title: "Adnan Ashraf | Software Developer",
   description: "Portfolio of Adnan Ashraf, a Software Developer and Project Manager Intern. Specializing in full-stack development, AI, and responsive web design.",
   openGraph: {
     title: "Adnan Ashraf | Software Developer",
     description: "Portfolio of Adnan Ashraf, a Software Developer and Project Manager Intern.",
-    url: "https://adnanashraf.com", // Update with your actual domain
+    url: "https://adnanashraf.dev", // Update with your actual domain
     siteName: "Adnan Ashraf Portfolio",
     locale: "en_US",
     type: "website",
