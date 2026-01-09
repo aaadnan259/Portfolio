@@ -74,3 +74,9 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: color-mix(in srgb, var(--color-primary), transparent 50%);
 }
+
+@layer utilities {
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+}
