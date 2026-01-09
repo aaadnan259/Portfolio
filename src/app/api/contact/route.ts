@@ -3,6 +3,8 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { escapeHtml } from "@/lib/utils";
 
+const rateLimit = new Map<string, number>();
+
 const contactSchema = z.object({
     name: z.string().min(1, "Name is required").max(100, "Name is too long"),
     email: z.string().email("Invalid email address"),
@@ -10,6 +12,31 @@ const contactSchema = z.object({
 });
 
 export async function POST(request: Request) {
+    const ip = request.headers.get("x-forwarded-for") || "unknown";
+    const now = Date.now();
+
+    if (rateLimit.has(ip)) {
+        const lastRequest = rateLimit.get(ip) as number;
+        if (now - lastRequest < 60000) { // 1 minute window
+            return NextResponse.json(
+                { error: "Too many requests. Please try again later." },
+                { status: 429 }
+            );
+        }
+    }
+
+    rateLimit.set(ip, now);
+
+    // Optional: Cleanup old entries to prevent memory leaks
+    if (rateLimit.size > 100) {
+        const oneMinuteAgo = now - 60000;
+        for (const [key, timestamp] of rateLimit.entries()) {
+            if (timestamp < oneMinuteAgo) {
+                rateLimit.delete(key);
+            }
+        }
+    }
+
     const apiKey = process.env.RESEND_API_KEY;
     const contactEmail = process.env.CONTACT_EMAIL;
 
