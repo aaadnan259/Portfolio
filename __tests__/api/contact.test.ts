@@ -19,6 +19,8 @@ vi.mock("resend", () => ({
 const originalEnv = process.env;
 
 describe("Contact API", () => {
+    let ipCounter = 1;
+
     beforeEach(() => {
         vi.clearAllMocks();
         process.env = {
@@ -33,7 +35,7 @@ describe("Contact API", () => {
 
         const request = new Request("http://localhost/api/contact", {
             method: "POST",
-            headers: { "x-forwarded-for": `10.0.0.${Math.floor(Math.random() * 255)}` },
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
             body: JSON.stringify({
                 name: "<script>alert('xss')</script>John",
                 email: "john@example.com",
@@ -57,7 +59,7 @@ describe("Contact API", () => {
     it("should return 400 for invalid email", async () => {
         const request = new Request("http://localhost/api/contact", {
             method: "POST",
-            headers: { "x-forwarded-for": `10.0.0.${Math.floor(Math.random() * 255)}` },
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
             body: JSON.stringify({
                 name: "John Doe",
                 email: "invalid-email",
@@ -76,7 +78,7 @@ describe("Contact API", () => {
     it("should return 400 for missing name", async () => {
         const request = new Request("http://localhost/api/contact", {
             method: "POST",
-            headers: { "x-forwarded-for": `10.0.0.${Math.floor(Math.random() * 255)}` },
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
             body: JSON.stringify({
                 email: "john@example.com",
                 message: "Hello world"
@@ -94,7 +96,7 @@ describe("Contact API", () => {
     it("should return 400 for missing message", async () => {
         const request = new Request("http://localhost/api/contact", {
             method: "POST",
-            headers: { "x-forwarded-for": `10.0.0.${Math.floor(Math.random() * 255)}` },
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
             body: JSON.stringify({
                 name: "John Doe",
                 email: "john@example.com"
@@ -113,7 +115,7 @@ describe("Contact API", () => {
         const longString = "a".repeat(5001);
         const request = new Request("http://localhost/api/contact", {
             method: "POST",
-            headers: { "x-forwarded-for": `10.0.0.${Math.floor(Math.random() * 255)}` },
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
             body: JSON.stringify({
                 name: "John Doe",
                 email: "safe@example.com",
@@ -132,7 +134,7 @@ describe("Contact API", () => {
         const longName = "a".repeat(101);
         const request = new Request("http://localhost/api/contact", {
             method: "POST",
-            headers: { "x-forwarded-for": `10.0.0.${Math.floor(Math.random() * 255)}` },
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
             body: JSON.stringify({
                 name: longName,
                 email: "safe@example.com",
