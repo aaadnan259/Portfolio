@@ -39,7 +39,7 @@ export const projects: ProjectItem[] = [
         description: "Architected a real-time AI microservice and Top-K RAG pipeline using Google Gemini's 1M+ token context. Achieved <200ms latency handling 100+ concurrent sessions.",
         tags: ["Python", "Generative AI", "RAG", "FastAPI", "ChromaDB"],
         links: { demo: "https://echobot-sics.onrender.com", github: "https://github.com/aaadnan259/EchobotVoiceAssistant" },
-        image: "/images/echobot-demo.jpg?v=2",
+        image: "/images/echobot-demo.jpg",
     },
     {
         title: "GraphRAG Engine",
@@ -47,7 +47,7 @@ export const projects: ProjectItem[] = [
         description: "Designed a hybrid retrieval engine using Neo4j and ChromaDB to merge vector search with graph traversal. Implemented async ingestion with Gemini, optimizing entity extraction throughput.",
         tags: ["Python", "Neo4j", "LangChain", "RAG", "ChromaDB"],
         links: { demo: "", github: "https://github.com/aaadnan259/GraphRAG" },
-        image: "/images/graphrag.jpg?v=3",
+        image: "/images/graphrag.jpg",
     },
     {
         title: "IntelliStock",
@@ -55,7 +55,7 @@ export const projects: ProjectItem[] = [
         description: "Developed a Linear Regression forecasting engine (accuracy 65%→85%) and scalable data pipeline. Optimized database performance to reduce query overhead by ~98%.",
         tags: ["Python", "Django", "React", "PostgreSQL", "Scikit-learn"],
         links: { demo: "", github: "https://github.com/aaadnan259/Intellistock" },
-        image: "/images/intellistock.jpg?v=2",
+        image: "/images/intellistock.jpg",
     },
     {
         title: "Generative Metaball Engine",
@@ -64,7 +64,7 @@ export const projects: ProjectItem[] = [
         tags: ["Python", "NumPy", "Raspberry Pi", "OpenCV", "Computer Vision"],
         links: { demo: "", github: "https://github.com/aaadnan259/Generative-AI-Artwork" },
         image: "/images/metaball.jpg",
-        video: "/videos/generative-art-demo.mp4?v=2",
+        video: "/videos/generative-art-demo.mp4",
     }
 ];
 
