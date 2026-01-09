@@ -12,7 +12,8 @@ const contactSchema = z.object({
 });
 
 export async function POST(request: Request) {
-    const ip = request.headers.get("x-forwarded-for") || "unknown";
+    const forwardedFor = request.headers.get("x-forwarded-for");
+    const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "unknown";
     const now = Date.now();
 
     if (rateLimit.has(ip)) {
