@@ -47,7 +47,7 @@ export const projects: ProjectItem[] = [
         description: "Designed a hybrid retrieval engine using Neo4j and ChromaDB to merge vector search with graph traversal. Implemented async ingestion with Gemini, optimizing entity extraction throughput.",
         tags: ["Python", "Neo4j", "LangChain", "RAG", "ChromaDB"],
         links: { demo: "#", github: "#" },
-        image: "/images/graphrag.jpg?v=2",
+        image: "/images/graphrag.png",
     },
     {
         title: "IntelliStock",
