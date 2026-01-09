@@ -19,7 +19,8 @@ export default function Projects() {
                     <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* UNIFORM GRID: 1 column on mobile, 2 columns on desktop */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} project={project} index={index} />
                     ))}
