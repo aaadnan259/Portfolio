@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
+import crypto from "node:crypto";
 
 export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
@@ -17,9 +18,14 @@ export async function POST(request: Request) {
     // Check for Webhook Secret if configured
     if (webhookSecret) {
         const { searchParams } = new URL(request.url);
-        const secret = searchParams.get("secret");
+        const secret = searchParams.get("secret") || "";
 
-        if (secret !== webhookSecret) {
+        // Use constant-time comparison to prevent timing attacks
+        // We hash both strings to handle variable lengths safely with timingSafeEqual
+        const secretHash = crypto.createHash("sha256").update(secret).digest();
+        const webhookSecretHash = crypto.createHash("sha256").update(webhookSecret).digest();
+
+        if (!crypto.timingSafeEqual(secretHash, webhookSecretHash)) {
             console.warn("Unauthorized webhook attempt");
             return NextResponse.json(
                 { error: "Unauthorized" },
