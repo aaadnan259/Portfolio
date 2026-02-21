@@ -70,4 +70,24 @@ describe('Webhook API', () => {
         const res = await POST(req);
         expect(res.status).toBe(200);
     });
+
+    it('should return 401 if WEBHOOK_SECRET is not configured', async () => {
+        const originalSecret = process.env.WEBHOOK_SECRET;
+        delete process.env.WEBHOOK_SECRET;
+        try {
+            const req = new Request('http://localhost:3000/api/webhook/email', {
+                method: 'POST',
+                body: JSON.stringify({
+                    subject: 'Test Subject',
+                    email: 'test@example.com',
+                    message: 'Test Message',
+                }),
+            });
+
+            const res = await POST(req);
+            expect(res.status).toBe(401);
+        } finally {
+            process.env.WEBHOOK_SECRET = originalSecret;
+        }
+    });
 });

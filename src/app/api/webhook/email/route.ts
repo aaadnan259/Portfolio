@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
+import crypto from 'node:crypto';
 
 export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
@@ -14,20 +15,28 @@ export async function POST(request: Request) {
         );
     }
 
-    // Check for Webhook Secret if configured
-    if (webhookSecret) {
-        const { searchParams } = new URL(request.url);
-        const secret = searchParams.get("secret");
+    // Enforce Webhook Secret
+    if (!webhookSecret) {
+        console.warn("WEBHOOK_SECRET is not set.");
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
+    }
 
-        if (secret !== webhookSecret) {
-            console.warn("Unauthorized webhook attempt");
-            return NextResponse.json(
-                { error: "Unauthorized" },
-                { status: 401 }
-            );
-        }
-    } else {
-        console.warn("WEBHOOK_SECRET is not set. Endpoint is insecure.");
+    const { searchParams } = new URL(request.url);
+    const secret = searchParams.get("secret");
+
+    // Secure constant-time comparison
+    const expectedHash = crypto.createHash('sha256').update(webhookSecret).digest();
+    const actualHash = crypto.createHash('sha256').update(secret || '').digest();
+
+    if (!crypto.timingSafeEqual(expectedHash, actualHash)) {
+        console.warn("Unauthorized webhook attempt");
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
     }
 
     const resend = new Resend(apiKey);
