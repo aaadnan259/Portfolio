@@ -56,12 +56,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                     </div>
                     <div className="flex gap-3 shrink-0 ml-4">
                         {project.links.github && (
-                            <Link href={project.links.github} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Source Code" target="_blank">
+                            <Link href={project.links.github} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Source Code" target="_blank" rel="noopener noreferrer">
                                 <Github size={20} />
                             </Link>
                         )}
                         {project.links.demo && (
-                            <Link href={project.links.demo} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Live Demo" target="_blank">
+                            <Link href={project.links.demo} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Live Demo" target="_blank" rel="noopener noreferrer">
                                 <ExternalLink size={20} />
                             </Link>
                         )}
