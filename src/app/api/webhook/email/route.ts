@@ -5,10 +5,11 @@ import crypto from "node:crypto";
 
 export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
+    const contactEmail = process.env.CONTACT_EMAIL;
     const webhookSecret = process.env.WEBHOOK_SECRET;
 
-    if (!apiKey) {
-        console.error("RESEND_API_KEY is missing");
+    if (!apiKey || !contactEmail) {
+        console.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
@@ -81,7 +82,7 @@ export async function POST(request: Request) {
         // Send email using Resend
         const { data, error } = await resend.emails.send({
             from: "Portfolio Webhook <onboarding@resend.dev>",
-            to: process.env.CONTACT_EMAIL || "aaadnan259@gmail.com",
+            to: contactEmail,
             subject: `[Webhook] ${forwardSubject}`,
             html: forwardContent,
         });
