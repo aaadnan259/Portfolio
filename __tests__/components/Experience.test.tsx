@@ -2,8 +2,10 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import Experience from "@/components/Experience";
 
-// Mock data
-const mockExperiences = [
+// vi.hoisted() ensures mockExperiences is initialized before vi.mock() is
+// hoisted to the top of the file by vitest. A plain const would cause a
+// "Cannot access before initialization" ReferenceError.
+const mockExperiences = vi.hoisted(() => [
     {
         title: "Software Engineer",
         company: "Tech Corp",
@@ -22,7 +24,7 @@ const mockExperiences = [
         icon: () => <div data-testid="edu-icon" />,
         logo: null,
     },
-];
+]);
 
 // Mock the portfolio data
 vi.mock("@/data/portfolio", () => ({
