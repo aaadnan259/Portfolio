@@ -22,7 +22,7 @@ export default function Skills() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {skills.map((skillGroup, index) => (
                         <motion.div
-                            key={index}
+                            key={skillGroup.category}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -31,8 +31,8 @@ export default function Skills() {
                         >
                             <h3 className="text-xl font-bold text-primary mb-6 text-center">{skillGroup.category}</h3>
                             <div className="flex flex-wrap gap-3 justify-center">
-                                {skillGroup.items.map((item, i) => (
-                                    <span key={i} className="px-3 py-1.5 bg-surface text-text/80 rounded-full text-sm font-medium border border-surface hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-colors cursor-default flex items-center gap-2">
+                                {skillGroup.items.map((item) => (
+                                    <span key={item.name} className="px-3 py-1.5 bg-surface text-text/80 rounded-full text-sm font-medium border border-surface hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-colors cursor-default flex items-center gap-2">
                                         <i className={`${item.icon} text-lg`} />
                                         {item.name}
                                     </span>
