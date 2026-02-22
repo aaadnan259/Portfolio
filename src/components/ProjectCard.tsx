@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
@@ -12,6 +13,36 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        const videoElement = videoRef.current;
+        if (!videoElement) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        videoElement.play().catch(() => {
+                            // Autoplay was prevented
+                        });
+                    } else {
+                        videoElement.pause();
+                    }
+                });
+            },
+            {
+                threshold: 0.5,
+            }
+        );
+
+        observer.observe(videoElement);
+
+        return () => {
+            observer.unobserve(videoElement);
+        };
+    }, [project.video]);
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,8 +55,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             <div className="relative w-full aspect-video bg-surface/50 overflow-hidden border-b border-surface">
                 {project.video ? (
                     <video
+                        ref={videoRef}
                         className="w-full h-full object-cover"
-                        autoPlay
                         loop
                         muted
                         playsInline
