@@ -18,6 +18,8 @@ export async function POST(request: Request) {
     }
 
     // Enforce Webhook Secret
+    // SECURITY: This check is critical to prevent unauthenticated access.
+    // If WEBHOOK_SECRET is not set, we must fail closed.
     if (!webhookSecret) {
         logger.warn("WEBHOOK_SECRET is not set.");
         return NextResponse.json(
