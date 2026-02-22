@@ -1,33 +1,45 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
+import { logger } from "@/lib/logger";
+import crypto from "node:crypto";
 
 export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
+    const contactEmail = process.env.CONTACT_EMAIL;
     const webhookSecret = process.env.WEBHOOK_SECRET;
 
-    if (!apiKey) {
-        console.error("RESEND_API_KEY is missing");
+    if (!apiKey || !contactEmail) {
+        logger.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
         );
     }
 
-    // Check for Webhook Secret if configured
-    if (webhookSecret) {
-        const { searchParams } = new URL(request.url);
-        const secret = searchParams.get("secret");
+    // Enforce Webhook Secret
+    if (!webhookSecret) {
+        logger.warn("WEBHOOK_SECRET is not set.");
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
+    }
 
-        if (secret !== webhookSecret) {
-            console.warn("Unauthorized webhook attempt");
-            return NextResponse.json(
-                { error: "Unauthorized" },
-                { status: 401 }
-            );
-        }
-    } else {
-        console.warn("WEBHOOK_SECRET is not set. Endpoint is insecure.");
+    const { searchParams } = new URL(request.url);
+    const secret = searchParams.get("secret") || "";
+
+    // Use constant-time comparison to prevent timing attacks
+    // We hash both strings to handle variable lengths safely with timingSafeEqual
+    const secretHash = crypto.createHash("sha256").update(secret).digest();
+    const webhookSecretHash = crypto.createHash("sha256").update(webhookSecret).digest();
+
+    if (!crypto.timingSafeEqual(secretHash, webhookSecretHash)) {
+        logger.warn("Unauthorized webhook attempt");
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
     }
 
     const resend = new Resend(apiKey);
@@ -75,26 +87,26 @@ export async function POST(request: Request) {
         // Send email using Resend
         const { data, error } = await resend.emails.send({
             from: "Portfolio Webhook <onboarding@resend.dev>",
-            to: process.env.CONTACT_EMAIL || "aaadnan259@gmail.com",
+            to: contactEmail,
             subject: `[Webhook] ${forwardSubject}`,
             html: forwardContent,
         });
 
         if (error) {
-            console.error("Resend error:", error);
+            logger.error("Resend error:", error);
             return NextResponse.json(
                 { error: `Failed to forward email: ${error.message}` },
                 { status: 500 }
             );
         }
 
-        console.log("Email forwarded successfully:", data);
+        logger.info("Email forwarded successfully:", data);
         return NextResponse.json(
             { message: "Email forwarded successfully" },
             { status: 200 }
         );
     } catch (error) {
-        console.error("Error processing webhook:", error);
+        logger.error("Error processing webhook:", error);
         return NextResponse.json(
             { error: "Internal server error" },
             { status: 500 }

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import { escapeHtml } from "@/lib/utils";
+import { logger } from "@/lib/logger";
 
 const rateLimit = new Map<string, number>();
 
@@ -26,6 +27,9 @@ export async function POST(request: Request) {
         }
     }
 
+    // Use delete before set to ensure the key is moved to the end of the Map (most recent)
+    // This allows us to use insertion order for efficient cleanup
+    rateLimit.delete(ip);
     rateLimit.set(ip, now);
 
     // Optional: Cleanup old entries to prevent memory leaks
@@ -34,6 +38,10 @@ export async function POST(request: Request) {
         for (const [key, timestamp] of rateLimit.entries()) {
             if (timestamp < oneMinuteAgo) {
                 rateLimit.delete(key);
+            } else {
+                // Since the Map is ordered by insertion time (LRU),
+                // as soon as we hit a timestamp that is recent enough, we can stop.
+                break;
             }
         }
     }
@@ -42,7 +50,7 @@ export async function POST(request: Request) {
     const contactEmail = process.env.CONTACT_EMAIL;
 
     if (!apiKey || !contactEmail) {
-        console.error("Missing required environment variables");
+        logger.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
@@ -99,20 +107,20 @@ export async function POST(request: Request) {
         });
 
         if (error) {
-            console.error("Resend error:", error);
+            logger.error("Resend error:", error);
             return NextResponse.json(
                 { error: `Failed to send email: ${error.message || JSON.stringify(error)}` },
                 { status: 500 }
             );
         }
 
-        console.log("Email sent successfully:", data);
+        logger.info("Email sent successfully:", data);
         return NextResponse.json(
             { message: "Message sent successfully" },
             { status: 200 }
         );
     } catch (error) {
-        console.error("Error processing contact form:", error);
+        logger.error("Error processing contact form:", error);
         return NextResponse.json(
             { error: "Internal server error" },
             { status: 500 }

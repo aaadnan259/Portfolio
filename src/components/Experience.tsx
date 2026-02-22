@@ -27,7 +27,7 @@ export default function Experience() {
                     <div className="space-y-12">
                         {experiences.map((exp, index) => (
                             <motion.div
-                                key={index}
+                                key={`${exp.company}-${exp.title}`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -63,8 +63,8 @@ export default function Experience() {
                                             <h4 className="text-lg text-text/80">{exp.company} | {exp.location}</h4>
                                         </div>
                                         <ul className="space-y-2">
-                                            {exp.description.map((item, i) => (
-                                                <li key={i} className="flex items-start gap-2 text-text/70 text-sm">
+                                            {exp.description.map((item) => (
+                                                <li key={item} className="flex items-start gap-2 text-text/70 text-sm">
                                                     <span className="mt-1.5 w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0" />
                                                     <span>{item}</span>
                                                 </li>

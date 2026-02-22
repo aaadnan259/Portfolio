@@ -56,12 +56,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                     </div>
                     <div className="flex gap-3 shrink-0 ml-4">
                         {project.links.github && (
-                            <Link href={project.links.github} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Source Code" target="_blank">
+                            <Link href={project.links.github} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Source Code" target="_blank" rel="noopener noreferrer">
                                 <Github size={20} />
                             </Link>
                         )}
                         {project.links.demo && (
-                            <Link href={project.links.demo} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Live Demo" target="_blank">
+                            <Link href={project.links.demo} className="text-text/60 hover:text-text-light transition-colors" aria-label="View Live Demo" target="_blank" rel="noopener noreferrer">
                                 <ExternalLink size={20} />
                             </Link>
                         )}
@@ -74,9 +74,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
                 {/* TAGS (Pushed to bottom) */}
                 <div className="mt-auto flex flex-wrap gap-2">
-                    {project.tags.map((tag, i) => (
+                    {project.tags.map((tag) => (
                         <span
-                            key={i}
+                            key={tag}
                             className="px-3 py-1 bg-surface text-xs font-medium text-text/70 rounded-full border border-surface group-hover:border-primary/20 transition-colors"
                         >
                             {tag}
