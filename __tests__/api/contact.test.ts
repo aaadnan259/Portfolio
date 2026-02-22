@@ -177,4 +177,24 @@ describe("Contact API", () => {
             process.env.CONTACT_EMAIL = originalContactEmail;
         }
     });
+
+    it("should return 500 when Resend returns an error", async () => {
+        mocks.send.mockResolvedValue({ data: null, error: { message: "Simulated Resend error" } });
+
+        const request = new Request("http://localhost/api/contact", {
+            method: "POST",
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
+            body: JSON.stringify({
+                name: "John Doe",
+                email: "john@example.com",
+                message: "Hello world"
+            })
+        });
+
+        const response = await POST(request);
+        const data = await response.json();
+
+        expect(response.status).toBe(500);
+        expect(data.error).toBe("Failed to send email: Simulated Resend error");
+    });
 });
