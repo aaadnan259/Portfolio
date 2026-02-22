@@ -1,10 +1,66 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
+import { LRUCache } from "lru-cache";
 import { escapeHtml } from "@/lib/utils";
 import { logger } from "@/lib/logger";
 
-const rateLimit = new Map<string, number>();
+// Initialize rate limiter based on available environment variables
+let checkRateLimit: (identifier: string) => Promise<{ success: boolean }>;
+
+// Use Upstash Redis if available (Best for serverless/distributed)
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    const redis = new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    });
+
+    const ratelimit = new Ratelimit({
+        redis: redis,
+        limiter: Ratelimit.slidingWindow(3, "60 s"), // 3 requests per minute
+        analytics: true,
+    });
+
+    checkRateLimit = async (identifier: string) => {
+        try {
+            const result = await ratelimit.limit(identifier);
+            return { success: result.success };
+        } catch (error) {
+            logger.error("Rate limit error:", error);
+            // Fail open if Redis is down, or closed?
+            // Failing closed (blocking) is safer for security, but bad for UX.
+            // Given this is a contact form, we might want to allow it if Redis fails temporarily.
+            // But for now, let's treat error as success to avoid blocking legitimate users during outages.
+            return { success: true };
+        }
+    };
+} else {
+    // Fallback to in-memory LRU Cache (Per-instance, ephemeral)
+    // Warn only once or in logs
+    if (process.env.NODE_ENV === "production") {
+        logger.warn("UPSTASH_REDIS_REST_URL or UPSTASH_REDIS_REST_TOKEN not found. Falling back to in-memory rate limiting. This provides limited protection in serverless environments.");
+    }
+
+    const tokenCache = new LRUCache<string, number>({
+        max: 500,
+        ttl: 60000, // 1 minute window
+        allowStale: false,
+    });
+
+    checkRateLimit = async (identifier: string) => {
+        const tokenCount = (tokenCache.get(identifier) as number) || 0;
+        const limit = 3; // 3 requests per minute
+
+        if (tokenCount >= limit) {
+            return { success: false };
+        }
+
+        tokenCache.set(identifier, tokenCount + 1);
+        return { success: true };
+    };
+}
 
 const contactSchema = z.object({
     name: z.string().min(1, "Name is required").max(100, "Name is too long"),
@@ -15,35 +71,14 @@ const contactSchema = z.object({
 export async function POST(request: Request) {
     const forwardedFor = request.headers.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "unknown";
-    const now = Date.now();
 
-    if (rateLimit.has(ip)) {
-        const lastRequest = rateLimit.get(ip) as number;
-        if (now - lastRequest < 60000) { // 1 minute window
-            return NextResponse.json(
-                { error: "Too many requests. Please try again later." },
-                { status: 429 }
-            );
-        }
-    }
-
-    // Use delete before set to ensure the key is moved to the end of the Map (most recent)
-    // This allows us to use insertion order for efficient cleanup
-    rateLimit.delete(ip);
-    rateLimit.set(ip, now);
-
-    // Optional: Cleanup old entries to prevent memory leaks
-    if (rateLimit.size > 100) {
-        const oneMinuteAgo = now - 60000;
-        for (const [key, timestamp] of rateLimit.entries()) {
-            if (timestamp < oneMinuteAgo) {
-                rateLimit.delete(key);
-            } else {
-                // Since the Map is ordered by insertion time (LRU),
-                // as soon as we hit a timestamp that is recent enough, we can stop.
-                break;
-            }
-        }
+    // Check rate limit
+    const { success } = await checkRateLimit(ip);
+    if (!success) {
+        return NextResponse.json(
+            { error: "Too many requests. Please try again later." },
+            { status: 429 }
+        );
     }
 
     const apiKey = process.env.RESEND_API_KEY;
