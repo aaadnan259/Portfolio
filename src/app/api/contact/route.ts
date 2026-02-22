@@ -3,8 +3,7 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { escapeHtml } from "@/lib/utils";
 import { logger } from "@/lib/logger";
-
-const rateLimit = new Map<string, number>();
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const contactSchema = z.object({
     name: z.string().min(1, "Name is required").max(100, "Name is too long"),
@@ -15,35 +14,14 @@ const contactSchema = z.object({
 export async function POST(request: Request) {
     const forwardedFor = request.headers.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "unknown";
-    const now = Date.now();
 
-    if (rateLimit.has(ip)) {
-        const lastRequest = rateLimit.get(ip) as number;
-        if (now - lastRequest < 60000) { // 1 minute window
-            return NextResponse.json(
-                { error: "Too many requests. Please try again later." },
-                { status: 429 }
-            );
-        }
-    }
-
-    // Use delete before set to ensure the key is moved to the end of the Map (most recent)
-    // This allows us to use insertion order for efficient cleanup
-    rateLimit.delete(ip);
-    rateLimit.set(ip, now);
-
-    // Optional: Cleanup old entries to prevent memory leaks
-    if (rateLimit.size > 100) {
-        const oneMinuteAgo = now - 60000;
-        for (const [key, timestamp] of rateLimit.entries()) {
-            if (timestamp < oneMinuteAgo) {
-                rateLimit.delete(key);
-            } else {
-                // Since the Map is ordered by insertion time (LRU),
-                // as soon as we hit a timestamp that is recent enough, we can stop.
-                break;
-            }
-        }
+    // Check rate limit
+    const isAllowed = await checkRateLimit(ip);
+    if (!isAllowed) {
+        return NextResponse.json(
+            { error: "Too many requests. Please try again later." },
+            { status: 429 }
+        );
     }
 
     const apiKey = process.env.RESEND_API_KEY;
