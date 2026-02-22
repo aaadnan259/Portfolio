@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
-import crypto from 'node:crypto';
+import crypto from "node:crypto";
 
 export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
+    const contactEmail = process.env.CONTACT_EMAIL;
     const webhookSecret = process.env.WEBHOOK_SECRET;
 
-    if (!apiKey) {
-        console.error("RESEND_API_KEY is missing");
+    if (!apiKey || !contactEmail) {
+        console.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
@@ -25,13 +26,14 @@ export async function POST(request: Request) {
     }
 
     const { searchParams } = new URL(request.url);
-    const secret = searchParams.get("secret");
+    const secret = searchParams.get("secret") || "";
 
-    // Secure constant-time comparison
-    const expectedHash = crypto.createHash('sha256').update(webhookSecret).digest();
-    const actualHash = crypto.createHash('sha256').update(secret || '').digest();
+    // Use constant-time comparison to prevent timing attacks
+    // We hash both strings to handle variable lengths safely with timingSafeEqual
+    const secretHash = crypto.createHash("sha256").update(secret).digest();
+    const webhookSecretHash = crypto.createHash("sha256").update(webhookSecret).digest();
 
-    if (!crypto.timingSafeEqual(expectedHash, actualHash)) {
+    if (!crypto.timingSafeEqual(secretHash, webhookSecretHash)) {
         console.warn("Unauthorized webhook attempt");
         return NextResponse.json(
             { error: "Unauthorized" },
@@ -84,7 +86,7 @@ export async function POST(request: Request) {
         // Send email using Resend
         const { data, error } = await resend.emails.send({
             from: "Portfolio Webhook <onboarding@resend.dev>",
-            to: process.env.CONTACT_EMAIL || "aaadnan259@gmail.com",
+            to: contactEmail,
             subject: `[Webhook] ${forwardSubject}`,
             html: forwardContent,
         });

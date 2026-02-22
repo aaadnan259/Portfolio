@@ -54,9 +54,10 @@ If you wish to explore the code or run the site locally:
     ```
 
 3.  **Configure Environment Variables:**
-    To make the contact form work locally, create a `.env.local` file in the root directory and add your Resend API key:
+    To make the contact form work locally, create a `.env.local` file in the root directory and add your Resend API key and contact email:
     ```env
     RESEND_API_KEY=re_123456789
+    CONTACT_EMAIL=your_email@example.com
     ```
 
 4.  **Start the development server:**

@@ -23,6 +23,7 @@ describe('Webhook API', () => {
         process.env = { ...ORIGINAL_ENV };
         process.env.RESEND_API_KEY = 're_123456789';
         process.env.WEBHOOK_SECRET = 'test_secret';
+        process.env.CONTACT_EMAIL = 'test@example.com';
     });
 
     afterEach(() => {
@@ -69,6 +70,27 @@ describe('Webhook API', () => {
 
         const res = await POST(req);
         expect(res.status).toBe(200);
+        expect(mockSend).toHaveBeenCalledWith(expect.objectContaining({
+            to: 'test@example.com',
+        }));
+    });
+
+    it('should return 500 if CONTACT_EMAIL is missing', async () => {
+        delete process.env.CONTACT_EMAIL;
+
+        const req = new Request('http://localhost:3000/api/webhook/email?secret=test_secret', {
+            method: 'POST',
+            body: JSON.stringify({
+                subject: 'Test Subject',
+                email: 'test@example.com',
+                message: 'Test Message',
+            }),
+        });
+
+        const res = await POST(req);
+        expect(res.status).toBe(500);
+        const data = await res.json();
+        expect(data.error).toBe("Server configuration error");
     });
 
     it('should return 401 if WEBHOOK_SECRET is not configured', async () => {

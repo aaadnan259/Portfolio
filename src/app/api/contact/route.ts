@@ -26,6 +26,9 @@ export async function POST(request: Request) {
         }
     }
 
+    // Use delete before set to ensure the key is moved to the end of the Map (most recent)
+    // This allows us to use insertion order for efficient cleanup
+    rateLimit.delete(ip);
     rateLimit.set(ip, now);
 
     // Optional: Cleanup old entries to prevent memory leaks
@@ -34,6 +37,10 @@ export async function POST(request: Request) {
         for (const [key, timestamp] of rateLimit.entries()) {
             if (timestamp < oneMinuteAgo) {
                 rateLimit.delete(key);
+            } else {
+                // Since the Map is ordered by insertion time (LRU),
+                // as soon as we hit a timestamp that is recent enough, we can stop.
+                break;
             }
         }
     }
