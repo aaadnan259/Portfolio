@@ -23,7 +23,7 @@ vi.mock("@upstash/ratelimit", () => ({
 
 vi.mock("@upstash/redis", () => ({
     Redis: class {
-        constructor() {}
+        constructor() { }
     }
 }));
 
@@ -47,6 +47,8 @@ describe("Contact API Rate Limiting", () => {
     });
 
     const importRoute = async () => {
+        // Since we moved rate limiting to lib/rate-limit, we should import that
+        // to ensure the cached module is cleared properly if needed, but vitest resetModules handles it.
         const module = await import("../../src/app/api/contact/route");
         return module.POST;
     };
