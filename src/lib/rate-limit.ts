@@ -1,60 +1,61 @@
+import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
+import { LRUCache } from "lru-cache";
 import { logger } from "@/lib/logger";
 
-// In-memory fallback
-const memoryStore = new Map<string, number>();
+// Initialize rate limiter based on available environment variables
+let checkRateLimit: (identifier: string) => Promise<{ success: boolean }>;
 
-// Clean up memory store periodically to prevent leaks
-if (process.env.NODE_ENV !== "test") {
-    setInterval(() => {
-        const now = Date.now();
-        for (const [key, timestamp] of memoryStore.entries()) {
-            if (now - timestamp > 60000) {
-                memoryStore.delete(key);
-            }
-        }
-    }, 60000 * 5); // Clean up every 5 minutes
-}
+// Use Upstash Redis if available (Best for serverless/distributed)
+if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    const redis = new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    });
 
-export async function checkRateLimit(ip: string): Promise<boolean> {
-    const useRedis = process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN;
+    const ratelimit = new Ratelimit({
+        redis: redis,
+        limiter: Ratelimit.slidingWindow(3, "60 s"), // 3 requests per minute
+        analytics: true,
+    });
 
-    if (useRedis) {
+    checkRateLimit = async (identifier: string) => {
         try {
-            const redis = Redis.fromEnv();
-            const key = `rate-limit:contact:${ip}`;
-
-            // Try to set the key if it doesn't exist, with an expiry of 60 seconds
-            // "NX" means only set if not exists
-            // "EX" means expire in seconds
-            const result = await redis.set(key, "1", { nx: true, ex: 60 });
-
-            // If result is "OK", the key was set (request allowed)
-            // If result is null, the key already existed (request denied)
-            return result === "OK";
+            const result = await ratelimit.limit(identifier);
+            return { success: result.success };
         } catch (error) {
             logger.error("Rate limit error (Redis):", error);
-            // Fallback to memory if Redis fails
-            return checkMemoryRateLimit(ip);
+            // Fail open if Redis is down, or closed?
+            // Failing closed (blocking) is safer for security, but bad for UX.
+            // Given this is a contact form, we might want to allow it if Redis fails temporarily.
+            // But for now, let's treat error as success to avoid blocking legitimate users during outages.
+            return { success: true };
         }
+    };
+} else {
+    // Fallback to in-memory LRU Cache (Per-instance, ephemeral)
+    // Warn only once or in logs
+    if (process.env.NODE_ENV === "production") {
+        logger.warn("UPSTASH_REDIS_REST_URL or UPSTASH_REDIS_REST_TOKEN not found. Falling back to in-memory rate limiting. This provides limited protection in serverless environments.");
     }
 
-    return checkMemoryRateLimit(ip);
-}
+    const tokenCache = new LRUCache<string, number>({
+        max: 500,
+        ttl: 60000, // 1 minute window
+        allowStale: false,
+    });
 
-function checkMemoryRateLimit(ip: string): boolean {
-    const now = Date.now();
+    checkRateLimit = async (identifier: string) => {
+        const tokenCount = (tokenCache.get(identifier) as number) || 0;
+        const limit = 3; // 3 requests per minute
 
-    if (memoryStore.has(ip)) {
-        const lastRequest = memoryStore.get(ip) as number;
-        if (now - lastRequest < 60000) {
-            return false;
+        if (tokenCount >= limit) {
+            return { success: false };
         }
-    }
 
-    // Update timestamp
-    memoryStore.delete(ip);
-    memoryStore.set(ip, now);
-
-    return true;
+        tokenCache.set(identifier, tokenCount + 1);
+        return { success: true };
+    };
 }
+
+export { checkRateLimit };

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { processWebhookPayload } from "@/lib/email-processing";
+import { escapeHtml } from "@/lib/utils";
 import { logger } from "@/lib/logger";
 import crypto from "node:crypto";
 
@@ -18,8 +18,6 @@ export async function POST(request: Request) {
     }
 
     // Enforce Webhook Secret
-    // SECURITY: This check is critical to prevent unauthenticated access.
-    // If WEBHOOK_SECRET is not set, we must fail closed.
     if (!webhookSecret) {
         logger.warn("WEBHOOK_SECRET is not set.");
         return NextResponse.json(
@@ -48,23 +46,36 @@ export async function POST(request: Request) {
 
     try {
         const body = await request.json();
+        // Allow flexible payload structure, but look for common email fields
+        const { subject, from, text, html, message, name, email } = body;
 
-        // Extract and process payload using centralized logic
-        const { subject, from, content } = processWebhookPayload(body);
+        // Sanitize inputs
+        const safeSubject = escapeHtml(subject || "No Subject");
+        const safeFrom = escapeHtml(from || email || "Unknown");
+        const safeName = escapeHtml(name || "Unknown");
+
+        // Prefer HTML, then Text, then Message, then JSON dump
+        // IMPORTANT: We must escape the raw content before putting it into our container
+        // If 'html' was provided, we treat it as potentially malicious and escape it,
+        // effectively stripping its ability to execute, but preserving it as readable code/text.
+        // OR: If we want to support sending Valid HTML, we would need a sophisticated sanitizer (DOMPurify).
+        // For a secure default, we will ESCAPE everything.
+        const rawBody = html || text || message || JSON.stringify(body, null, 2);
+        const safeBodyContent = escapeHtml(rawBody).replace(/\n/g, '<br>');
 
         // Construct the email content
-        const forwardSubject = subject;
+        const forwardSubject = safeSubject || `New Webhook Message from ${safeName}`;
         const forwardContent = `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
                 <h2 style="color: #333; border-bottom: 2px solid #4F46E5; padding-bottom: 10px;">
                     Webhook Email Forward
                 </h2>
                 <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
-                    <p><strong>Original Sender:</strong> ${from}</p>
-                    <p><strong>Subject:</strong> ${subject}</p>
+                    <p><strong>Original Sender:</strong> ${safeFrom}</p>
+                    <p><strong>Subject:</strong> ${safeSubject}</p>
                     <hr style="border: 0; border-top: 1px solid #ddd; margin: 15px 0;" />
                     <div style="background-color: white; padding: 15px; border-left: 4px solid #4F46E5;">
-                        ${content}
+                        ${safeBodyContent}
                     </div>
                 </div>
                 <p style="color: #666; font-size: 12px; margin-top: 30px;">

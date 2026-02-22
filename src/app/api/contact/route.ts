@@ -16,8 +16,8 @@ export async function POST(request: Request) {
     const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "unknown";
 
     // Check rate limit
-    const isAllowed = await checkRateLimit(ip);
-    if (!isAllowed) {
+    const { success } = await checkRateLimit(ip);
+    if (!success) {
         return NextResponse.json(
             { error: "Too many requests. Please try again later." },
             { status: 429 }

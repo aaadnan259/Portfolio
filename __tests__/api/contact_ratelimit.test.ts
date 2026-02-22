@@ -1,8 +1,9 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
-// Mock Resend globally
+// Mocks
 const mocks = vi.hoisted(() => ({
     send: vi.fn(),
+    checkRateLimit: vi.fn(),
 }));
 
 vi.mock("resend", () => ({
@@ -13,96 +14,66 @@ vi.mock("resend", () => ({
     }
 }));
 
-describe("Contact API Rate Limiting", () => {
+// Mock the rate limit utility
+vi.mock("@/lib/rate-limit", () => ({
+    checkRateLimit: mocks.checkRateLimit
+}));
+
+const originalEnv = process.env;
+
+describe("Contact API Rate Limiting Integration", () => {
     let POST: any;
 
     beforeEach(async () => {
         vi.resetModules();
-        vi.useFakeTimers();
+        vi.clearAllMocks();
+        process.env = { ...originalEnv };
+        process.env.RESEND_API_KEY = "re_123";
+        process.env.CONTACT_EMAIL = "admin@example.com";
 
-        // Set necessary env vars
-        process.env.RESEND_API_KEY = "test_key";
-        process.env.CONTACT_EMAIL = "test@example.com";
+        // Default: Rate limit allowed
+        mocks.checkRateLimit.mockResolvedValue({ success: true });
+        mocks.send.mockResolvedValue({ data: { id: "123" }, error: null });
 
-        // Re-import the module to get a fresh instance of rateLimit map
         const mod = await import("../../src/app/api/contact/route");
         POST = mod.POST;
     });
 
     afterEach(() => {
-        vi.useRealTimers();
-        vi.clearAllMocks();
+        process.env = originalEnv;
     });
 
-    it("should allow first request and block subsequent requests from same IP within window", async () => {
-        mocks.send.mockResolvedValue({ data: { id: "123" }, error: null });
-
-        const req1 = new Request("http://localhost/api/contact", {
+    const createRequest = (ip: string) => {
+        return new Request("http://localhost/api/contact", {
             method: "POST",
-            headers: { "x-forwarded-for": "1.2.3.4" },
-            body: JSON.stringify({ name: "Test", email: "test@example.com", message: "Hello" })
+            headers: { "x-forwarded-for": ip },
+            body: JSON.stringify({
+                name: "John Doe",
+                email: "john@example.com",
+                message: "Hello world"
+            })
         });
+    };
 
-        const res1 = await POST(req1);
-        expect(res1.status).toBe(200);
+    it("should allow request when rate limit check succeeds", async () => {
+        mocks.checkRateLimit.mockResolvedValue({ success: true });
 
-        // Immediate subsequent request
-        const req2 = new Request("http://localhost/api/contact", {
-            method: "POST",
-            headers: { "x-forwarded-for": "1.2.3.4" },
-            body: JSON.stringify({ name: "Test", email: "test@example.com", message: "Hello" })
-        });
+        const response = await POST(createRequest("1.1.1.1"));
 
-        const res2 = await POST(req2);
-        expect(res2.status).toBe(429);
-        const data2 = await res2.json();
-        expect(data2.error).toBe("Too many requests. Please try again later.");
+        expect(response.status).toBe(200);
+        expect(mocks.checkRateLimit).toHaveBeenCalledWith("1.1.1.1");
+        expect(mocks.send).toHaveBeenCalled();
     });
 
-    it("should allow request after window expires", async () => {
-         mocks.send.mockResolvedValue({ data: { id: "123" }, error: null });
+    it("should return 429 when rate limit check fails", async () => {
+        mocks.checkRateLimit.mockResolvedValue({ success: false });
 
-        // Initial request
-        const req1 = new Request("http://localhost/api/contact", {
-            method: "POST",
-            headers: { "x-forwarded-for": "1.2.3.5" },
-            body: JSON.stringify({ name: "Test", email: "test@example.com", message: "Hello" })
-        });
-        await POST(req1);
+        const response = await POST(createRequest("2.2.2.2"));
+        const data = await response.json();
 
-        // Advance time by 60 seconds + 1ms
-        vi.advanceTimersByTime(60001);
-
-        // Subsequent request
-        const req2 = new Request("http://localhost/api/contact", {
-            method: "POST",
-            headers: { "x-forwarded-for": "1.2.3.5" },
-            body: JSON.stringify({ name: "Test", email: "test@example.com", message: "Hello" })
-        });
-
-        const res2 = await POST(req2);
-        expect(res2.status).toBe(200);
-    });
-
-    it("should treat different IPs independently", async () => {
-        mocks.send.mockResolvedValue({ data: { id: "123" }, error: null });
-
-        // Request from IP A
-        const reqA = new Request("http://localhost/api/contact", {
-            method: "POST",
-            headers: { "x-forwarded-for": "10.0.0.1" },
-            body: JSON.stringify({ name: "Test", email: "test@example.com", message: "Hello" })
-        });
-        const resA = await POST(reqA);
-        expect(resA.status).toBe(200);
-
-        // Request from IP B (should succeed even if A is rate limited)
-        const reqB = new Request("http://localhost/api/contact", {
-            method: "POST",
-            headers: { "x-forwarded-for": "10.0.0.2" },
-            body: JSON.stringify({ name: "Test", email: "test@example.com", message: "Hello" })
-        });
-        const resB = await POST(reqB);
-        expect(resB.status).toBe(200);
+        expect(response.status).toBe(429);
+        expect(data.error).toBe("Too many requests. Please try again later.");
+        expect(mocks.checkRateLimit).toHaveBeenCalledWith("2.2.2.2");
+        expect(mocks.send).not.toHaveBeenCalled();
     });
 });

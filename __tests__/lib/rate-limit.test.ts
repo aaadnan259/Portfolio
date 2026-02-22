@@ -1,102 +1,109 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { checkRateLimit } from "../../src/lib/rate-limit";
-import { Redis } from "@upstash/redis";
 
-vi.mock("@upstash/redis", () => ({
-    Redis: {
-        fromEnv: vi.fn()
+const mockLimit = vi.fn();
+
+vi.mock("@upstash/ratelimit", () => ({
+    Ratelimit: class {
+        static slidingWindow = vi.fn();
+        limit = mockLimit;
     }
 }));
 
-// Mock Date.now
-const realDateNow = Date.now.bind(global.Date);
-const dateNowStub = vi.fn();
+vi.mock("@upstash/redis", () => ({
+    Redis: class {
+        constructor() { }
+    }
+}));
 
 describe("Rate Limit Utility", () => {
+    let checkRateLimit: any;
     const originalEnv = process.env;
 
-    beforeEach(() => {
-        process.env = { ...originalEnv };
+    beforeEach(async () => {
+        vi.resetModules();
         vi.clearAllMocks();
-        global.Date.now = dateNowStub;
-        dateNowStub.mockReturnValue(1000000);
+        process.env = { ...originalEnv };
+        mockLimit.mockResolvedValue({ success: true });
     });
 
     afterEach(() => {
         process.env = originalEnv;
-        global.Date.now = realDateNow;
     });
 
-    describe("In-Memory Fallback", () => {
+    const getRateLimitModule = async () => {
+        const module = await import("../../src/lib/rate-limit");
+        return module.checkRateLimit;
+    };
+
+    describe("Upstash Strategy", () => {
         beforeEach(() => {
-            delete process.env.KV_REST_API_URL;
-            delete process.env.KV_REST_API_TOKEN;
+            process.env.UPSTASH_REDIS_REST_URL = "https://fake.url";
+            process.env.UPSTASH_REDIS_REST_TOKEN = "fake-token";
         });
 
-        it("should allow first request", async () => {
+        it("should return true when Upstash allows the request", async () => {
+            checkRateLimit = await getRateLimitModule();
+            mockLimit.mockResolvedValueOnce({ success: true });
+
             const result = await checkRateLimit("1.1.1.1");
-            expect(result).toBe(true);
+            expect(result).toEqual({ success: true });
+            expect(mockLimit).toHaveBeenCalledWith("1.1.1.1");
         });
 
-        it("should block second request within window", async () => {
-            const ip = "2.2.2.2";
-            await checkRateLimit(ip); // first allowed
-            const result = await checkRateLimit(ip); // second denied
-            expect(result).toBe(false);
+        it("should return false when Upstash blocks the request", async () => {
+            checkRateLimit = await getRateLimitModule();
+            mockLimit.mockResolvedValueOnce({ success: false });
+
+            const result = await checkRateLimit("2.2.2.2");
+            expect(result).toEqual({ success: false });
+            expect(mockLimit).toHaveBeenCalledWith("2.2.2.2");
         });
 
-        it("should allow request after window expires", async () => {
-            const ip = "3.3.3.3";
-            await checkRateLimit(ip);
+        it("should fail open (return true) if Redis throws an error", async () => {
+            checkRateLimit = await getRateLimitModule();
+            mockLimit.mockRejectedValueOnce(new Error("Redis error"));
 
-            // Advance time by 61 seconds
-            dateNowStub.mockReturnValue(1000000 + 61000);
-
-            const result = await checkRateLimit(ip);
-            expect(result).toBe(true);
+            const result = await checkRateLimit("3.3.3.3");
+            expect(result).toEqual({ success: true });
         });
     });
 
-    describe("Redis Strategy", () => {
-        let mockRedisSet: any;
-
+    describe("LRU Cache Fallback", () => {
         beforeEach(() => {
-            process.env.KV_REST_API_URL = "https://fake.url";
-            process.env.KV_REST_API_TOKEN = "fake-token";
-
-            mockRedisSet = vi.fn();
-            (Redis.fromEnv as any).mockReturnValue({
-                set: mockRedisSet
-            });
+            delete process.env.UPSTASH_REDIS_REST_URL;
+            delete process.env.UPSTASH_REDIS_REST_TOKEN;
         });
 
-        it("should use Redis when env vars are present", async () => {
-            mockRedisSet.mockResolvedValue("OK");
-            const result = await checkRateLimit("4.4.4.4");
+        it("should allow first 3 requests and block the 4th", async () => {
+            checkRateLimit = await getRateLimitModule();
 
-            expect(Redis.fromEnv).toHaveBeenCalled();
-            expect(mockRedisSet).toHaveBeenCalledWith(
-                "rate-limit:contact:4.4.4.4",
-                "1",
-                { nx: true, ex: 60 }
-            );
-            expect(result).toBe(true);
+            // Should not call Upstash
+            expect(mockLimit).not.toHaveBeenCalled();
+
+            let result = await checkRateLimit("10.0.0.1");
+            expect(result).toEqual({ success: true });
+
+            result = await checkRateLimit("10.0.0.1");
+            expect(result).toEqual({ success: true });
+
+            result = await checkRateLimit("10.0.0.1");
+            expect(result).toEqual({ success: true });
+
+            result = await checkRateLimit("10.0.0.1");
+            expect(result).toEqual({ success: false }); // 4th request blocked
         });
 
-        it("should return false when Redis key already exists", async () => {
-            mockRedisSet.mockResolvedValue(null);
-            const result = await checkRateLimit("5.5.5.5");
-            expect(result).toBe(false);
-        });
+        it("should track limits separately for different IPs", async () => {
+            checkRateLimit = await getRateLimitModule();
 
-        it("should fallback to memory if Redis fails", async () => {
-            mockRedisSet.mockRejectedValue(new Error("Redis error"));
+            await checkRateLimit("10.0.0.2");
+            await checkRateLimit("10.0.0.2");
+            await checkRateLimit("10.0.0.2");
+            const result1 = await checkRateLimit("10.0.0.2");
+            expect(result1).toEqual({ success: false });
 
-            // Should fall back to memory.
-            // Using a fresh IP "6.6.6.6", memory check should return true.
-            const result = await checkRateLimit("6.6.6.6");
-
-            expect(result).toBe(true);
+            const result2 = await checkRateLimit("10.0.0.3");
+            expect(result2).toEqual({ success: true });
         });
     });
 });
