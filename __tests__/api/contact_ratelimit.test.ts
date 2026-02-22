@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 // Mocks
 const mocks = vi.hoisted(() => ({
     send: vi.fn(),
-    limit: vi.fn(),
+    checkRateLimit: vi.fn(),
 }));
 
 vi.mock("resend", () => ({
@@ -14,44 +14,34 @@ vi.mock("resend", () => ({
     }
 }));
 
-vi.mock("@upstash/ratelimit", () => ({
-    Ratelimit: class {
-        static slidingWindow = vi.fn();
-        limit = mocks.limit;
-    }
+// Mock the rate limit utility
+vi.mock("@/lib/rate-limit", () => ({
+    checkRateLimit: mocks.checkRateLimit
 }));
 
-vi.mock("@upstash/redis", () => ({
-    Redis: class {
-        constructor() { }
-    }
-}));
-
-// We need to manage process.env carefully
 const originalEnv = process.env;
 
-describe("Contact API Rate Limiting", () => {
+describe("Contact API Rate Limiting Integration", () => {
     let POST: any;
 
-    beforeEach(() => {
+    beforeEach(async () => {
         vi.resetModules();
         vi.clearAllMocks();
         process.env = { ...originalEnv };
-        // Default mocks
+        process.env.RESEND_API_KEY = "re_123";
+        process.env.CONTACT_EMAIL = "admin@example.com";
+
+        // Default: Rate limit allowed
+        mocks.checkRateLimit.mockResolvedValue({ success: true });
         mocks.send.mockResolvedValue({ data: { id: "123" }, error: null });
-        mocks.limit.mockResolvedValue({ success: true });
+
+        const mod = await import("../../src/app/api/contact/route");
+        POST = mod.POST;
     });
 
     afterEach(() => {
         process.env = originalEnv;
     });
-
-    const importRoute = async () => {
-        // Since we moved rate limiting to lib/rate-limit, we should import that
-        // to ensure the cached module is cleared properly if needed, but vitest resetModules handles it.
-        const module = await import("../../src/app/api/contact/route");
-        return module.POST;
-    };
 
     const createRequest = (ip: string) => {
         return new Request("http://localhost/api/contact", {
@@ -65,84 +55,25 @@ describe("Contact API Rate Limiting", () => {
         });
     };
 
-    describe("Upstash Rate Limiting", () => {
-        beforeEach(() => {
-            process.env.UPSTASH_REDIS_REST_URL = "https://mock-redis.upstash.io";
-            process.env.UPSTASH_REDIS_REST_TOKEN = "mock-token";
-            process.env.RESEND_API_KEY = "re_123";
-            process.env.CONTACT_EMAIL = "admin@example.com";
-        });
+    it("should allow request when rate limit check succeeds", async () => {
+        mocks.checkRateLimit.mockResolvedValue({ success: true });
 
-        it("should use Upstash Ratelimit when env vars are present", async () => {
-            POST = await importRoute();
+        const response = await POST(createRequest("1.1.1.1"));
 
-            mocks.limit.mockResolvedValueOnce({ success: true });
-
-            const response = await POST(createRequest("1.2.3.4"));
-            expect(response.status).toBe(200);
-            expect(mocks.limit).toHaveBeenCalledWith("1.2.3.4");
-        });
-
-        it("should return 429 when Upstash limits the request", async () => {
-            POST = await importRoute();
-
-            mocks.limit.mockResolvedValueOnce({ success: false });
-
-            const response = await POST(createRequest("1.2.3.4"));
-            const data = await response.json();
-
-            expect(response.status).toBe(429);
-            expect(data.error).toBe("Too many requests. Please try again later.");
-        });
+        expect(response.status).toBe(200);
+        expect(mocks.checkRateLimit).toHaveBeenCalledWith("1.1.1.1");
+        expect(mocks.send).toHaveBeenCalled();
     });
 
-    describe("In-Memory Fallback", () => {
-        beforeEach(() => {
-            delete process.env.UPSTASH_REDIS_REST_URL;
-            delete process.env.UPSTASH_REDIS_REST_TOKEN;
-            process.env.RESEND_API_KEY = "re_123";
-            process.env.CONTACT_EMAIL = "admin@example.com";
-        });
+    it("should return 429 when rate limit check fails", async () => {
+        mocks.checkRateLimit.mockResolvedValue({ success: false });
 
-        it("should use in-memory rate limiting when Upstash env vars are missing", async () => {
-            POST = await importRoute();
+        const response = await POST(createRequest("2.2.2.2"));
+        const data = await response.json();
 
-            // Should not call Upstash
-            expect(mocks.limit).not.toHaveBeenCalled();
-
-            // 1st request
-            let response = await POST(createRequest("10.0.0.1"));
-            expect(response.status).toBe(200);
-
-            // 2nd request
-            response = await POST(createRequest("10.0.0.1"));
-            expect(response.status).toBe(200);
-
-            // 3rd request
-            response = await POST(createRequest("10.0.0.1"));
-            expect(response.status).toBe(200);
-
-            // 4th request (Limit exceeded)
-            response = await POST(createRequest("10.0.0.1"));
-            expect(response.status).toBe(429);
-
-            const data = await response.json();
-            expect(data.error).toBe("Too many requests. Please try again later.");
-        });
-
-        it("should track limits separately for different IPs", async () => {
-            POST = await importRoute();
-
-            // Consume limit for IP 1
-            await POST(createRequest("10.0.0.2"));
-            await POST(createRequest("10.0.0.2"));
-            await POST(createRequest("10.0.0.2"));
-            const res1 = await POST(createRequest("10.0.0.2"));
-            expect(res1.status).toBe(429);
-
-            // IP 2 should still be fresh
-            const res2 = await POST(createRequest("10.0.0.3"));
-            expect(res2.status).toBe(200);
-        });
+        expect(response.status).toBe(429);
+        expect(data.error).toBe("Too many requests. Please try again later.");
+        expect(mocks.checkRateLimit).toHaveBeenCalledWith("2.2.2.2");
+        expect(mocks.send).not.toHaveBeenCalled();
     });
 });

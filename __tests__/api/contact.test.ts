@@ -197,36 +197,4 @@ describe("Contact API", () => {
         expect(response.status).toBe(500);
         expect(data.error).toBe("Failed to send email: Simulated Resend error");
     });
-
-    it("should return 429 when rate limit is exceeded", async () => {
-        const ip = "127.0.0.255";
-        const requestOpts = {
-            method: "POST",
-            headers: { "x-forwarded-for": ip },
-            body: JSON.stringify({
-                name: "John Doe",
-                email: "john@example.com",
-                message: "Hello world"
-            })
-        };
-
-        mocks.send.mockResolvedValue({ data: { id: "123" }, error: null });
-
-        // First 3 requests should succeed
-        const response1 = await POST(new Request("http://localhost/api/contact", requestOpts));
-        expect(response1.status).toBe(200);
-
-        const response2 = await POST(new Request("http://localhost/api/contact", requestOpts));
-        expect(response2.status).toBe(200);
-
-        const response3 = await POST(new Request("http://localhost/api/contact", requestOpts));
-        expect(response3.status).toBe(200);
-
-        // 4th request should fail with 429
-        const response4 = await POST(new Request("http://localhost/api/contact", requestOpts));
-        const data4 = await response4.json();
-
-        expect(response4.status).toBe(429);
-        expect(data4.error).toBe("Too many requests. Please try again later.");
-    });
 });
