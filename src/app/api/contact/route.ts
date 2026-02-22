@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import { escapeHtml } from "@/lib/utils";
+import { logger } from "@/lib/logger";
 
 const rateLimit = new Map<string, number>();
 
@@ -49,7 +50,7 @@ export async function POST(request: Request) {
     const contactEmail = process.env.CONTACT_EMAIL;
 
     if (!apiKey || !contactEmail) {
-        console.error("Missing required environment variables");
+        logger.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
@@ -106,20 +107,20 @@ export async function POST(request: Request) {
         });
 
         if (error) {
-            console.error("Resend error:", error);
+            logger.error("Resend error:", error);
             return NextResponse.json(
                 { error: `Failed to send email: ${error.message || JSON.stringify(error)}` },
                 { status: 500 }
             );
         }
 
-        console.log("Email sent successfully:", data);
+        logger.info("Email sent successfully:", data);
         return NextResponse.json(
             { message: "Message sent successfully" },
             { status: 200 }
         );
     } catch (error) {
-        console.error("Error processing contact form:", error);
+        logger.error("Error processing contact form:", error);
         return NextResponse.json(
             { error: "Internal server error" },
             { status: 500 }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
+import { logger } from "@/lib/logger";
 import crypto from "node:crypto";
 
 export async function POST(request: Request) {
@@ -9,7 +10,7 @@ export async function POST(request: Request) {
     const webhookSecret = process.env.WEBHOOK_SECRET;
 
     if (!apiKey || !contactEmail) {
-        console.error("Missing required environment variables");
+        logger.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
@@ -18,7 +19,7 @@ export async function POST(request: Request) {
 
     // Enforce Webhook Secret
     if (!webhookSecret) {
-        console.warn("WEBHOOK_SECRET is not set.");
+        logger.warn("WEBHOOK_SECRET is not set.");
         return NextResponse.json(
             { error: "Unauthorized" },
             { status: 401 }
@@ -34,7 +35,7 @@ export async function POST(request: Request) {
     const webhookSecretHash = crypto.createHash("sha256").update(webhookSecret).digest();
 
     if (!crypto.timingSafeEqual(secretHash, webhookSecretHash)) {
-        console.warn("Unauthorized webhook attempt");
+        logger.warn("Unauthorized webhook attempt");
         return NextResponse.json(
             { error: "Unauthorized" },
             { status: 401 }
@@ -92,20 +93,20 @@ export async function POST(request: Request) {
         });
 
         if (error) {
-            console.error("Resend error:", error);
+            logger.error("Resend error:", error);
             return NextResponse.json(
                 { error: `Failed to forward email: ${error.message}` },
                 { status: 500 }
             );
         }
 
-        console.log("Email forwarded successfully:", data);
+        logger.info("Email forwarded successfully:", data);
         return NextResponse.json(
             { message: "Email forwarded successfully" },
             { status: 200 }
         );
     } catch (error) {
-        console.error("Error processing webhook:", error);
+        logger.error("Error processing webhook:", error);
         return NextResponse.json(
             { error: "Internal server error" },
             { status: 500 }
