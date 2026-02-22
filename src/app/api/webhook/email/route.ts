@@ -3,13 +3,13 @@ import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
 import { logger } from "@/lib/logger";
 import crypto from "node:crypto";
+import { CONTACT_EMAIL } from "@/lib/config";
 
 export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
-    const contactEmail = process.env.CONTACT_EMAIL;
     const webhookSecret = process.env.WEBHOOK_SECRET;
 
-    if (!apiKey || !contactEmail) {
+    if (!apiKey || !CONTACT_EMAIL) {
         logger.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
         // Send email using Resend
         const { data, error } = await resend.emails.send({
             from: "Portfolio Webhook <onboarding@resend.dev>",
-            to: contactEmail,
+            to: CONTACT_EMAIL,
             subject: `[Webhook] ${forwardSubject}`,
             html: forwardContent,
         });

@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { cn } from "@/lib/utils";
+import { PUBLIC_CONTACT_EMAIL } from "@/lib/config";
 
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -102,8 +103,8 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-text/60">Email</p>
-                                    <a href="mailto:aaadnan259@gmail.com" className="font-medium hover:text-primary transition-colors">
-                                        aaadnan259@gmail.com
+                                    <a href={`mailto:${PUBLIC_CONTACT_EMAIL}`} className="font-medium hover:text-primary transition-colors">
+                                        {PUBLIC_CONTACT_EMAIL}
                                     </a>
                                 </div>
                             </div>
