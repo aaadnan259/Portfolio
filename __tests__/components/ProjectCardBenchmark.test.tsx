@@ -1,7 +1,6 @@
 import { render, cleanup } from '@testing-library/react'
 import { describe, it, vi, afterEach, expect } from 'vitest'
 import ProjectCard from '../../src/components/ProjectCard'
-import React from 'react'
 
 // Mock dependencies
 vi.mock('framer-motion', () => ({
@@ -18,6 +17,7 @@ vi.mock('lucide-react', () => ({
 }))
 
 vi.mock('next/image', () => ({
+  // eslint-disable-next-line @next/next/no-img-element
   default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
 }))
 

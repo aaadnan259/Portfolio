@@ -151,9 +151,7 @@ describe("Contact API", () => {
     });
 
     it("should return 500 when environment variables are missing", async () => {
-        // @ts-ignore
         env.RESEND_API_KEY = "";
-        // @ts-ignore
         env.CONTACT_EMAIL = "";
 
         try {
@@ -173,9 +171,7 @@ describe("Contact API", () => {
             expect(response.status).toBe(500);
             expect(data.error).toBe("Server configuration error");
         } finally {
-            // @ts-ignore
             env.RESEND_API_KEY = "re_12345678";
-            // @ts-ignore
             env.CONTACT_EMAIL = "admin@example.com";
         }
     });

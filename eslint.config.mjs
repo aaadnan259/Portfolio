@@ -10,6 +10,15 @@ const eslintConfig = defineConfig([
       "react-hooks/exhaustive-deps": "warn",
       "no-console": ["warn", { allow: ["error", "warn", "info"] }],
       "@next/next/no-img-element": "error",
+      "@typescript-eslint/no-explicit-any": "warn",
+    }
+  },
+  {
+    files: ["**/__tests__/**", "**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/e2e/**"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "no-console": "off",
     }
   },
   // Override default ignores of eslint-config-next.

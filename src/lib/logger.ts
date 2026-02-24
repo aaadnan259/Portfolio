@@ -1,47 +1,48 @@
-type LogLevel = "debug" | "info" | "warn" | "error";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// A simple structured logger for server-side environments
+// Following Next.js observability best practices
 
-const levels: Record<LogLevel, number> = {
-  debug: 0,
-  info: 1,
-  warn: 2,
-  error: 3,
-};
+type LogLevel = 'info' | 'warn' | 'error' | 'debug';
 
-const getLogLevel = (): LogLevel => {
-  const envLevel = process.env.LOG_LEVEL as LogLevel;
-  if (envLevel && levels[envLevel] !== undefined) {
-    return envLevel;
-  }
-  return "info";
-};
-
-const LOG_LEVEL = getLogLevel();
-
-function shouldLog(level: LogLevel): boolean {
-  const currentLevel = levels[level];
-  const configuredLevel = levels[LOG_LEVEL];
-  return currentLevel >= configuredLevel;
+interface LogEntry {
+  level: LogLevel;
+  timestamp: string;
+  message: string;
+  data?: any;
+  [key: string]: any;
 }
 
+const formatLog = (level: LogLevel, message: string, data?: any): string => {
+  const entry: LogEntry = {
+    level,
+    timestamp: new Date().toISOString(),
+    message,
+    ...(data && { data }),
+  };
+
+  // In development, pretty print. In production, output JSON for log aggregators
+  if (process.env.NODE_ENV === 'development') {
+    const dataStr = data ? `\n${JSON.stringify(data, null, 2)}` : '';
+    return `[${entry.timestamp}] ${level.toUpperCase()}: ${message}${dataStr}`;
+  }
+
+  return JSON.stringify(entry);
+};
+
 export const logger = {
-  debug: (message: string, ...args: unknown[]) => {
-    if (shouldLog("debug")) {
-      console.debug(`[DEBUG] ${message}`, ...args);
-    }
+  info: (message: string, data?: any) => {
+    console.info(formatLog('info', message, data));
   },
-  info: (message: string, ...args: unknown[]) => {
-    if (shouldLog("info")) {
-      console.info(`[INFO] ${message}`, ...args);
-    }
+  warn: (message: string, data?: any) => {
+    console.warn(formatLog('warn', message, data));
   },
-  warn: (message: string, ...args: unknown[]) => {
-    if (shouldLog("warn")) {
-      console.warn(`[WARN] ${message}`, ...args);
-    }
+  error: (message: string, data?: any) => {
+    console.error(formatLog('error', message, data));
   },
-  error: (message: string, ...args: unknown[]) => {
-    if (shouldLog("error")) {
-      console.error(`[ERROR] ${message}`, ...args);
+  debug: (message: string, data?: any) => {
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-console
+      console.debug(formatLog('debug', message, data));
     }
   },
 };

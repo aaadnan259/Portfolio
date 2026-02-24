@@ -1,11 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import Projects from '../../src/components/Projects';
-import React from 'react';
 
 // Mock next/image
 vi.mock('next/image', () => ({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     default: (props: any) => (
         // eslint-disable-next-line @next/next/no-img-element
         <img {...props} alt={props.alt || 'mocked image'} />
@@ -14,14 +13,14 @@ vi.mock('next/image', () => ({
 
 // Mock next/link
 vi.mock('next/link', () => ({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     default: ({ children, href }: any) => <a href={href}>{children}</a>
 }));
 
 // Mock framer-motion
 vi.mock('framer-motion', () => ({
     motion: {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+         
         div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
     },
 }));
