@@ -3,8 +3,8 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { escapeHtml } from "@/lib/utils";
 import { env } from "@/lib/env";
-
-const rateLimit = new Map<string, number>();
+import { logger } from "@/lib/logger";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const contactSchema = z.object({
     name: z.string().min(1, "Name is required").max(100, "Name is too long"),
@@ -15,42 +15,21 @@ const contactSchema = z.object({
 export async function POST(request: Request) {
     const forwardedFor = request.headers.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "unknown";
-    const now = Date.now();
 
-    if (rateLimit.has(ip)) {
-        const lastRequest = rateLimit.get(ip) as number;
-        if (now - lastRequest < 60000) { // 1 minute window
-            return NextResponse.json(
-                { error: "Too many requests. Please try again later." },
-                { status: 429 }
-            );
-        }
-    }
-
-    // Use delete before set to ensure the key is moved to the end of the Map (most recent)
-    // This allows us to use insertion order for efficient cleanup
-    rateLimit.delete(ip);
-    rateLimit.set(ip, now);
-
-    // Optional: Cleanup old entries to prevent memory leaks
-    if (rateLimit.size > 100) {
-        const oneMinuteAgo = now - 60000;
-        for (const [key, timestamp] of rateLimit.entries()) {
-            if (timestamp < oneMinuteAgo) {
-                rateLimit.delete(key);
-            } else {
-                // Since the Map is ordered by insertion time (LRU),
-                // as soon as we hit a timestamp that is recent enough, we can stop.
-                break;
-            }
-        }
+    // Check rate limit
+    const { success } = await checkRateLimit(ip);
+    if (!success) {
+        return NextResponse.json(
+            { error: "Too many requests. Please try again later." },
+            { status: 429 }
+        );
     }
 
     const apiKey = env.RESEND_API_KEY;
     const contactEmail = env.CONTACT_EMAIL;
 
     if (!apiKey || !contactEmail) {
-        console.error("Missing required environment variables");
+        logger.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
@@ -107,20 +86,20 @@ export async function POST(request: Request) {
         });
 
         if (error) {
-            console.error("Resend error:", error);
+            logger.error("Resend error:", error);
             return NextResponse.json(
                 { error: `Failed to send email: ${error.message || JSON.stringify(error)}` },
                 { status: 500 }
             );
         }
 
-        console.log("Email sent successfully:", data);
+        logger.info("Email sent successfully:", data);
         return NextResponse.json(
             { message: "Message sent successfully" },
             { status: 200 }
         );
     } catch (error) {
-        console.error("Error processing contact form:", error);
+        logger.error("Error processing contact form:", error);
         return NextResponse.json(
             { error: "Internal server error" },
             { status: 500 }

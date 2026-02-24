@@ -2,85 +2,105 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import Experience from "@/components/Experience";
 
-// vi.hoisted() ensures these values are initialized before vi.mock() is hoisted
-// to the top of the file by vitest. Using a plain const would cause a
+// vi.hoisted() ensures mockExperiences is initialized before vi.mock() is
+// hoisted to the top of the file by vitest. A plain const would cause a
 // "Cannot access before initialization" ReferenceError.
 const mockExperiences = vi.hoisted(() => [
     {
         title: "Software Engineer",
-        company: "Test Corp",
-        location: "Remote",
-        date: "2023 – Present",
-        description: ["Built things.", "Fixed stuff."],
-        icon: () => null,
-        logo: "/images/test.webp",
+        company: "Tech Corp",
+        location: "San Francisco, CA",
+        date: "Jan 2022 - Present",
+        description: ["Developed features", "Fixed bugs"],
+        icon: () => <div data-testid="work-icon" />,
+        logo: "/tech-corp-logo.png",
     },
     {
-        title: "B.S. Computer Science",
-        company: "Test University",
-        location: "Columbus, OH",
-        date: "Graduated: May 2023",
-        description: ["GPA: 4.0"],
-        icon: () => null,
-        logo: "/images/test-uni.webp",
+        title: "Student",
+        company: "University of Science",
+        location: "Boston, MA",
+        date: "2018 - 2022",
+        description: ["Studied CS"],
+        icon: () => <div data-testid="edu-icon" />,
+        logo: null,
     },
 ]);
 
+// Mock the portfolio data
 vi.mock("@/data/portfolio", () => ({
     experiences: mockExperiences,
 }));
 
-vi.mock("next/image", () => ({
-    default: ({ src, alt }: { src: string; alt: string }) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} />
-    ),
-}));
-
+// Mock framer-motion to avoid animation issues in tests
 vi.mock("framer-motion", () => ({
     motion: {
-        div: ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-            <div {...props}>{children}</div>
+        div: ({ children, className, ...props }: any) => (
+            <div className={className} {...props}>
+                {children}
+            </div>
         ),
     },
 }));
 
+// Mock next/image
+vi.mock("next/image", () => ({
+    default: ({ src, alt, fill, ...props }: any) => {
+        // eslint-disable-next-line @next/next/no-img-element
+        return <img src={src} alt={alt} {...props} />;
+    },
+}));
+
 describe("Experience Component", () => {
-    it("renders the section heading", () => {
+    it("renders the experience section heading", () => {
         render(<Experience />);
         expect(screen.getByText("Experience & Education")).toBeDefined();
     });
 
-    it("renders all experience entries", () => {
+    it("renders all experience items from mocked data", () => {
         render(<Experience />);
-        expect(screen.getByText("Software Engineer")).toBeDefined();
-        expect(screen.getByText("B.S. Computer Science")).toBeDefined();
+        mockExperiences.forEach((exp) => {
+            // Check for title
+            expect(screen.getByText(exp.title)).toBeDefined();
+
+            // Check for company and location
+            const companyLocation = screen.getByText((content) =>
+                content.includes(exp.company) && content.includes(exp.location)
+            );
+            expect(companyLocation).toBeDefined();
+        });
     });
 
-    it("renders company and location for each entry", () => {
+    it("renders experience details correctly (date and description)", () => {
         render(<Experience />);
-        expect(screen.getByText("Test Corp | Remote")).toBeDefined();
-        expect(
-            screen.getByText("Test University | Columbus, OH")
-        ).toBeDefined();
+        mockExperiences.forEach((exp) => {
+            // Check for date
+            expect(screen.getByText(exp.date)).toBeDefined();
+
+            // Check for each description point
+            exp.description.forEach((desc) => {
+                expect(screen.getByText(desc)).toBeDefined();
+            });
+        });
     });
 
-    it("renders date badges", () => {
+    it("renders the company logo when provided", () => {
         render(<Experience />);
-        expect(screen.getByText("2023 – Present")).toBeDefined();
-        expect(screen.getByText("Graduated: May 2023")).toBeDefined();
+        const expWithLogo = mockExperiences[0];
+        const logo = screen.getByAltText(`${expWithLogo.company} logo`);
+        expect(logo).toBeDefined();
+        expect(logo.getAttribute("src")).toBe(expWithLogo.logo);
     });
 
-    it("renders description bullet points", () => {
+    it("does not render logo when not provided", () => {
         render(<Experience />);
-        expect(screen.getByText("Built things.")).toBeDefined();
-        expect(screen.getByText("Fixed stuff.")).toBeDefined();
-        expect(screen.getByText("GPA: 4.0")).toBeDefined();
+        const expWithoutLogo = mockExperiences[1];
+        const logo = screen.queryByAltText(`${expWithoutLogo.company} logo`);
+        expect(logo).toBeNull();
     });
 
-    it("renders logo images when provided", () => {
+    it("renders the timeline icons", () => {
         render(<Experience />);
-        const images = screen.getAllByRole("img");
-        expect(images.length).toBeGreaterThan(0);
+        expect(screen.getByTestId("work-icon")).toBeDefined();
+        expect(screen.getByTestId("edu-icon")).toBeDefined();
     });
 });

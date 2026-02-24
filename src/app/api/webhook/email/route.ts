@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
+import { logger } from "@/lib/logger";
 import crypto from "node:crypto";
 import { env } from "@/lib/env";
 
@@ -10,32 +11,36 @@ export async function POST(request: Request) {
     const webhookSecret = env.WEBHOOK_SECRET;
 
     if (!apiKey || !contactEmail) {
-        console.error("Missing required environment variables");
+        logger.error("Missing required environment variables");
         return NextResponse.json(
             { error: "Server configuration error" },
             { status: 500 }
         );
     }
 
-    // Check for Webhook Secret if configured
-    if (webhookSecret) {
-        const { searchParams } = new URL(request.url);
-        const secret = searchParams.get("secret") || "";
+    // Enforce Webhook Secret
+    if (!webhookSecret) {
+        logger.warn("WEBHOOK_SECRET is not set.");
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
+    }
 
-        // Use constant-time comparison to prevent timing attacks
-        // We hash both strings to handle variable lengths safely with timingSafeEqual
-        const secretHash = crypto.createHash("sha256").update(secret).digest();
-        const webhookSecretHash = crypto.createHash("sha256").update(webhookSecret).digest();
+    const { searchParams } = new URL(request.url);
+    const secret = searchParams.get("secret") || "";
 
-        if (!crypto.timingSafeEqual(secretHash, webhookSecretHash)) {
-            console.warn("Unauthorized webhook attempt");
-            return NextResponse.json(
-                { error: "Unauthorized" },
-                { status: 401 }
-            );
-        }
-    } else {
-        console.warn("WEBHOOK_SECRET is not set. Endpoint is insecure.");
+    // Use constant-time comparison to prevent timing attacks
+    // We hash both strings to handle variable lengths safely with timingSafeEqual
+    const secretHash = crypto.createHash("sha256").update(secret).digest();
+    const webhookSecretHash = crypto.createHash("sha256").update(webhookSecret).digest();
+
+    if (!crypto.timingSafeEqual(secretHash, webhookSecretHash)) {
+        logger.warn("Unauthorized webhook attempt");
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
     }
 
     const resend = new Resend(apiKey);
@@ -52,7 +57,7 @@ export async function POST(request: Request) {
 
         // Prefer HTML, then Text, then Message, then JSON dump
         // IMPORTANT: We must escape the raw content before putting it into our container
-        // If 'html' was provided, we treat it as potentially malicious and escape it, 
+        // If 'html' was provided, we treat it as potentially malicious and escape it,
         // effectively stripping its ability to execute, but preserving it as readable code/text.
         // OR: If we want to support sending Valid HTML, we would need a sophisticated sanitizer (DOMPurify).
         // For a secure default, we will ESCAPE everything.
@@ -89,20 +94,20 @@ export async function POST(request: Request) {
         });
 
         if (error) {
-            console.error("Resend error:", error);
+            logger.error("Resend error:", error);
             return NextResponse.json(
                 { error: `Failed to forward email: ${error.message}` },
                 { status: 500 }
             );
         }
 
-        console.log("Email forwarded successfully:", data);
+        logger.info("Email forwarded successfully:", data);
         return NextResponse.json(
             { message: "Email forwarded successfully" },
             { status: 200 }
         );
     } catch (error) {
-        console.error("Error processing webhook:", error);
+        logger.error("Error processing webhook:", error);
         return NextResponse.json(
             { error: "Internal server error" },
             { status: 500 }

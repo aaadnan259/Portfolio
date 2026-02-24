@@ -74,9 +74,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
                 {/* TAGS (Pushed to bottom) */}
                 <div className="mt-auto flex flex-wrap gap-2">
-                    {project.tags.map((tag, i) => (
+                    {project.tags.map((tag) => (
                         <span
-                            key={i}
+                            key={tag}
                             className="px-3 py-1 bg-surface text-xs font-medium text-text/70 rounded-full border border-surface group-hover:border-primary/20 transition-colors"
                         >
                             {tag}
