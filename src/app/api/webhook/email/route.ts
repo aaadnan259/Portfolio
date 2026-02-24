@@ -2,11 +2,12 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/utils";
 import crypto from "node:crypto";
+import { env } from "@/lib/env";
 
 export async function POST(request: Request) {
-    const apiKey = process.env.RESEND_API_KEY;
-    const contactEmail = process.env.CONTACT_EMAIL;
-    const webhookSecret = process.env.WEBHOOK_SECRET;
+    const apiKey = env.RESEND_API_KEY;
+    const contactEmail = env.CONTACT_EMAIL;
+    const webhookSecret = env.WEBHOOK_SECRET;
 
     if (!apiKey || !contactEmail) {
         console.error("Missing required environment variables");

@@ -42,3 +42,6 @@ next-env.d.ts
 
 load_test.json
 load_test_results.txt
+
+# agent
+.agent

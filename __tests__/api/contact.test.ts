@@ -15,19 +15,19 @@ vi.mock("resend", () => ({
     }
 }));
 
-// Mock process.env
-const originalEnv = process.env;
+// Mock env
+vi.mock("@/lib/env", () => ({
+    env: {
+        RESEND_API_KEY: "re_12345678",
+        CONTACT_EMAIL: "admin@example.com"
+    }
+}));
 
 describe("Contact API", () => {
     let ipCounter = 1;
 
     beforeEach(() => {
         vi.clearAllMocks();
-        process.env = {
-            ...originalEnv,
-            RESEND_API_KEY: "re_12345678",
-            CONTACT_EMAIL: "admin@example.com"
-        };
     });
 
     it("should return 200 for valid input and sanitize HTML", async () => {

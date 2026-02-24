@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import BackToTop from "../../src/components/BackToTop";
 
 describe("BackToTop Performance Benchmark", () => {
-    let scrollYGetterSpy: ReturnType<typeof vi.fn>;
+    let scrollYGetterSpy: any;
 
     beforeEach(() => {
         // Mock window.scrollY getter
