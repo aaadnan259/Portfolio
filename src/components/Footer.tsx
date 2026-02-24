@@ -2,7 +2,6 @@
 
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
-import { PUBLIC_CONTACT_EMAIL } from "@/lib/config";
 
 export default function Footer() {
     return (
@@ -36,7 +35,7 @@ export default function Footer() {
                             <Linkedin size={24} />
                         </Link>
                         <Link
-                            href={`mailto:${PUBLIC_CONTACT_EMAIL}`}
+                            href="mailto:aaadnan259@gmail.com"
                             className="text-text/60 hover:text-primary transition-colors"
                             aria-label="Email"
                         >

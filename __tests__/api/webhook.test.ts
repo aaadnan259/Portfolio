@@ -14,16 +14,6 @@ vi.mock('resend', () => {
     };
 });
 
-// Mock config to be dynamic based on env
-vi.mock('@/lib/config', () => ({
-    get CONTACT_EMAIL() {
-        return process.env.CONTACT_EMAIL;
-    },
-    get PUBLIC_CONTACT_EMAIL() {
-        return process.env.NEXT_PUBLIC_CONTACT_EMAIL;
-    }
-}));
-
 // Mock environment variables
 const ORIGINAL_ENV = process.env;
 
