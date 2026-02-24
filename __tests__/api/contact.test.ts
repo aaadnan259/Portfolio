@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { POST } from "../../src/app/api/contact/route";
+import { env } from "@/lib/env";
 
 
 // Mock Resend
@@ -15,19 +16,19 @@ vi.mock("resend", () => ({
     }
 }));
 
-// Mock process.env
-const originalEnv = process.env;
+// Mock env
+vi.mock("@/lib/env", () => ({
+    env: {
+        RESEND_API_KEY: "re_12345678",
+        CONTACT_EMAIL: "admin@example.com"
+    }
+}));
 
 describe("Contact API", () => {
     let ipCounter = 1;
 
     beforeEach(() => {
         vi.clearAllMocks();
-        process.env = {
-            ...originalEnv,
-            RESEND_API_KEY: "re_12345678",
-            CONTACT_EMAIL: "admin@example.com"
-        };
     });
 
     it("should return 200 for valid input and sanitize HTML", async () => {
@@ -150,11 +151,10 @@ describe("Contact API", () => {
     });
 
     it("should return 500 when environment variables are missing", async () => {
-        const originalApiKey = process.env.RESEND_API_KEY;
-        const originalContactEmail = process.env.CONTACT_EMAIL;
-
-        process.env.RESEND_API_KEY = "";
-        process.env.CONTACT_EMAIL = "";
+        // @ts-ignore
+        env.RESEND_API_KEY = "";
+        // @ts-ignore
+        env.CONTACT_EMAIL = "";
 
         try {
             const request = new Request("http://localhost/api/contact", {
@@ -173,8 +173,10 @@ describe("Contact API", () => {
             expect(response.status).toBe(500);
             expect(data.error).toBe("Server configuration error");
         } finally {
-            process.env.RESEND_API_KEY = originalApiKey;
-            process.env.CONTACT_EMAIL = originalContactEmail;
+            // @ts-ignore
+            env.RESEND_API_KEY = "re_12345678";
+            // @ts-ignore
+            env.CONTACT_EMAIL = "admin@example.com";
         }
     });
 

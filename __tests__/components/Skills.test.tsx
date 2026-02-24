@@ -34,7 +34,7 @@ vi.mock('@/data/portfolio', () => ({
 
 describe('Skills Component', () => {
     test('renders the Skills section with correct title', () => {
-        const { container } = render(<Skills />)
+        render(<Skills />);
 
         // Check for main heading
         const heading = screen.getByText('Technical Skills')

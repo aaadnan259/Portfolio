@@ -14,20 +14,31 @@ vi.mock('resend', () => {
     };
 });
 
-// Mock environment variables
-const ORIGINAL_ENV = process.env;
+import { env } from '@/lib/env';
+
+// Mock env
+vi.mock('@/lib/env', () => ({
+    env: {
+        RESEND_API_KEY: 're_123456789',
+        WEBHOOK_SECRET: 'test_secret',
+        CONTACT_EMAIL: 'test@example.com',
+    }
+}));
 
 describe('Webhook API', () => {
     beforeEach(() => {
-        vi.resetModules();
-        process.env = { ...ORIGINAL_ENV };
-        process.env.RESEND_API_KEY = 're_123456789';
-        process.env.WEBHOOK_SECRET = 'test_secret';
-        process.env.CONTACT_EMAIL = 'test@example.com';
+        vi.clearAllMocks();
+        // Reset our mocked env for each test
+        // @ts-ignore
+        env.RESEND_API_KEY = 're_123456789';
+        // @ts-ignore
+        env.WEBHOOK_SECRET = 'test_secret';
+        // @ts-ignore
+        env.CONTACT_EMAIL = 'test@example.com';
     });
 
     afterEach(() => {
-        process.env = ORIGINAL_ENV;
+
     });
 
     it('should return 401 if missing secret', async () => {
@@ -76,7 +87,8 @@ describe('Webhook API', () => {
     });
 
     it('should return 500 if CONTACT_EMAIL is missing', async () => {
-        delete process.env.CONTACT_EMAIL;
+        // @ts-ignore
+        delete env.CONTACT_EMAIL;
 
         const req = new Request('http://localhost:3000/api/webhook/email?secret=test_secret', {
             method: 'POST',

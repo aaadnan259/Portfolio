@@ -1,0 +1,10 @@
+__tests__/components/BackToTop.bench.test.tsx(13,13): error TS2322: Type 'Mock<Procedure | Constructable>' is not assignable to type '() => any'.
+  Type 'MockInstance<Procedure | Constructable> & (new (...args: any[]) => any) & {}' is not assignable to type '() => any'.
+    Type 'MockInstance<Procedure | Constructable> & (new (...args: any[]) => any) & {}' provides no match for the signature '(): any'.
+__tests__/components/Skills.test.tsx(37,15): error TS6133: 'container' is declared but its value is never read.
+playwright.config.ts(7,29): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '{ testDir: string; fullyParallel: true; forbidOnly: boolean; retries: number; workers: number | undefined; reporter: "html"; use: { baseURL: string; trace: "on-first-retry"; }; projects: { name: string; use: { ...; }; }[]; webServer: { ...; }; }' is not assignable to parameter of type 'PlaywrightTestConfig<unknown, unknown>' with 'exactOptionalPropertyTypes: true'. Consider adding 'undefined' to the types of the target's properties.
+      Types of property 'workers' are incompatible.
+        Type 'number | undefined' is not assignable to type 'string | number'.
+          Type 'undefined' is not assignable to type 'string | number'.
