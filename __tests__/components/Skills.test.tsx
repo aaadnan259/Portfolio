@@ -14,23 +14,30 @@ vi.mock('framer-motion', () => ({
 }))
 
 // Define data inside the mock to avoid hoisting issues
-vi.mock('@/data/portfolio', () => ({
-    skills: [
-        {
-            category: "Test Category 1",
-            items: [
-                { name: "Skill A", icon: "icon-a" },
-                { name: "Skill B", icon: "icon-b" }
-            ]
-        },
-        {
-            category: "Test Category 2",
-            items: [
-                { name: "Skill C", icon: "icon-c" }
-            ]
-        }
-    ]
-}))
+vi.mock('@/data/portfolio', () => {
+    // Mock simple React components for the icons
+    const MockIconA = (props: any) => <svg data-testid="icon-a" {...props} />
+    const MockIconB = (props: any) => <svg data-testid="icon-b" {...props} />
+    const MockIconC = (props: any) => <svg data-testid="icon-c" {...props} />
+
+    return {
+        skills: [
+            {
+                category: "Test Category 1",
+                items: [
+                    { name: "Skill A", icon: MockIconA },
+                    { name: "Skill B", icon: MockIconB }
+                ]
+            },
+            {
+                category: "Test Category 2",
+                items: [
+                    { name: "Skill C", icon: MockIconC }
+                ]
+            }
+        ]
+    }
+})
 
 describe('Skills Component', () => {
     test('renders the Skills section with correct title', () => {
@@ -57,15 +64,15 @@ describe('Skills Component', () => {
     })
 
     test('renders correct structure based on data', () => {
-        const { container } = render(<Skills />)
+        render(<Skills />)
 
-        // Check for icons (they are rendered as <i> tags with class names)
-        const iconA = container.querySelector('.icon-a')
-        const iconB = container.querySelector('.icon-b')
-        const iconC = container.querySelector('.icon-c')
+        // Check for mocked SVGs by testid
+        const iconA = screen.getByTestId('icon-a')
+        const iconB = screen.getByTestId('icon-b')
+        const iconC = screen.getByTestId('icon-c')
 
-        expect(iconA).not.toBeNull()
-        expect(iconB).not.toBeNull()
-        expect(iconC).not.toBeNull()
+        expect(iconA).toBeDefined()
+        expect(iconB).toBeDefined()
+        expect(iconC).toBeDefined()
     })
 })

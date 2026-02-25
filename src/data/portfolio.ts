@@ -1,6 +1,6 @@
 import { Briefcase, GraduationCap } from "lucide-react";
 import { ExperienceItem, ProjectItem, SkillGroup } from "@/types";
-
+import { PythonIcon, JavaIcon, JavaScriptIcon, Html5Icon, ReactIcon, NextJsIcon, TailwindIcon, GithubIcon, CIcon, SqlIcon, DjangoIcon, PandasIcon, ScikitLearnIcon, JiraIcon, AwsIcon, VsCodeIcon, PostgresqlIcon, RestApiIcon, MachineLearningIcon, DataAnalyticsIcon, AgileIcon } from "@/components/Icons";
 export const experiences: ExperienceItem[] = [
     {
         title: "Software Engineering Intern",
@@ -72,44 +72,45 @@ export const skills: SkillGroup[] = [
     {
         category: "Languages",
         items: [
-            { name: "Python", icon: "devicon-python-plain" },
-            { name: "Java", icon: "devicon-java-plain" },
-            { name: "JavaScript", icon: "devicon-javascript-plain" },
-            { name: "C", icon: "devicon-c-plain" },
-            { name: "HTML/CSS", icon: "devicon-html5-plain" },
-            { name: "SQL", icon: "devicon-postgresql-plain" }
+            { name: "Python", icon: PythonIcon },
+            { name: "Java", icon: JavaIcon },
+            { name: "JavaScript", icon: JavaScriptIcon },
+            { name: "C", icon: CIcon },
+            { name: "HTML/CSS", icon: Html5Icon },
+            { name: "SQL", icon: SqlIcon }
         ]
     },
     {
         category: "Frameworks & Libraries",
         items: [
-            { name: "React", icon: "devicon-react-original" },
-            { name: "Next.js", icon: "devicon-nextjs-plain" },
-            { name: "Django", icon: "devicon-django-plain" },
-            { name: "Pandas", icon: "devicon-pandas-plain" },
-            { name: "Scikit-learn", icon: "devicon-scikitlearn-plain" },
-            { name: "Tailwind CSS", icon: "devicon-tailwindcss-original" }
+            { name: "React", icon: ReactIcon },
+            { name: "Next.js", icon: NextJsIcon },
+            { name: "Django", icon: DjangoIcon },
+            { name: "Pandas", icon: PandasIcon },
+            { name: "Scikit-learn", icon: ScikitLearnIcon },
+            { name: "Tailwind CSS", icon: TailwindIcon }
         ]
     },
     {
         category: "Tools & Platforms",
         items: [
-            { name: "Git & GitHub", icon: "devicon-github-original" },
-            { name: "Jira", icon: "devicon-jira-plain" },
-            { name: "AWS", icon: "devicon-amazonwebservices-original" },
-            { name: "VS Code", icon: "devicon-vscode-plain" },
-            { name: "PostgreSQL", icon: "devicon-postgresql-plain" }
+            { name: "Git & GitHub", icon: GithubIcon },
+            { name: "Jira", icon: JiraIcon },
+            { name: "AWS", icon: AwsIcon },
+            { name: "VS Code", icon: VsCodeIcon },
+            { name: "PostgreSQL", icon: PostgresqlIcon }
         ]
     },
     {
         category: "Concepts",
         items: [
-            { name: "RESTful APIs", icon: "devicon-networkx-plain" },
-            { name: "Machine Learning", icon: "devicon-tensorflow-original" },
-            { name: "NLP", icon: "devicon-python-plain" },
-            { name: "Data Analytics", icon: "devicon-pandas-plain" },
-            { name: "Agile/Scrum", icon: "devicon-jira-plain" },
-            { name: "OOP", icon: "devicon-java-plain" }
+            { name: "RESTful APIs", icon: RestApiIcon },
+            { name: "Machine Learning", icon: MachineLearningIcon },
+            { name: "NLP", icon: PythonIcon },
+            { name: "Data Analytics", icon: DataAnalyticsIcon },
+            { name: "Agile/Scrum", icon: AgileIcon },
+            { name: "OOP", icon: JavaIcon }
         ]
     }
 ];
+
