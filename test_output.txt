@@ -1,0 +1,1231 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.14 [39m[90mC:/Users/aaadn/OneDrive/Desktop/Portfolio[39m
+
+stderr | __tests__/components/Navbar.test.tsx > Navbar Component > renders the logo image
+Received `true` for a non-boolean attribute `fill`.
+
+If you want to write it to the DOM, pass a string instead: fill="true" or fill={value.toString()}.
+Received `true` for a non-boolean attribute `priority`.
+
+If you want to write it to the DOM, pass a string instead: priority="true" or priority={value.toString()}.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+
+stderr | __tests__/components/Navbar.test.tsx > Navbar Component > renders all desktop navigation links
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+
+stderr | __tests__/components/Navbar.test.tsx > Navbar Component > does not render mobile menu by default
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+
+stderr | __tests__/components/Navbar.test.tsx > Navbar Component > opens mobile menu when toggle button is clicked
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+
+stderr | __tests__/components/Navbar.test.tsx > Navbar Component > closes mobile menu when a mobile link is clicked
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+
+stderr | __tests__/components/Navbar.test.tsx > Navbar Component > registers IntersectionObserver for all valid scroll sections
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+[vitest] The vi.fn() mock did not use 'function' or 'class' in its implementation, see https://vitest.dev/api/vi#vi-spyon for examples.
+
+ [31mΓ¥»[39m __tests__/components/Navbar.test.tsx [2m([22m[2m6 tests[22m[2m | [22m[31m6 failed[39m[2m)[22m[32m 120[2mms[22m[39m
+[31m     [31m├ù[31m renders the logo image[39m[32m 64[2mms[22m[39m
+[31m     [31m├ù[31m renders all desktop navigation links[39m[32m 11[2mms[22m[39m
+[31m     [31m├ù[31m does not render mobile menu by default[39m[32m 8[2mms[22m[39m
+[31m     [31m├ù[31m opens mobile menu when toggle button is clicked[39m[32m 10[2mms[22m[39m
+[31m     [31m├ù[31m closes mobile menu when a mobile link is clicked[39m[32m 14[2mms[22m[39m
+[31m     [31m├ù[31m registers IntersectionObserver for all valid scroll sections[39m[32m 10[2mms[22m[39m
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Tests 6 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+ FAIL  __tests__/components/Navbar.test.tsx > Navbar Component > renders the logo image
+{
+  stack: 'AggregateError: \n' +
+    '    at aggregateErrors (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:551:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:897:24)\n' +
+    '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\act-compat.js:47:25\n' +
+    '    at renderRoot (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:190:26)\n' +
+    '    at Proxy.render (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:292:10)\n' +
+    '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx:39:9\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:145:11\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:919:26\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:1244:20\n' +
+    '    at new Promise (<anonymous>)',
+  errors: [
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/src/components/Navbar.tsx:24:26\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15519:11)\n' +
+        '    at flushPassiveEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:18432:9)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    }
+  ],
+  constructor: 'Function<AggregateError>',
+  name: 'AggregateError',
+  message: '',
+  toString: 'Function<toString>',
+  stacks: [
+    {
+      method: 'aggregateErrors',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 551,
+      column: 11
+    },
+    {
+      method: 'process.env.NODE_ENV.exports.act',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 897,
+      column: 24
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/act-compat.js',
+      line: 47,
+      column: 25
+    },
+    {
+      method: 'renderRoot',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 190,
+      column: 26
+    },
+    {
+      method: 'Proxy.render',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 292,
+      column: 10
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx',
+      line: 39,
+      column: 9
+    }
+  ]
+}
+ Γ¥» aggregateErrors node_modules/react/cjs/react.development.js:551:11
+ Γ¥» process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:897:24
+ Γ¥» node_modules/@testing-library/react/dist/act-compat.js:47:25
+ Γ¥» renderRoot node_modules/@testing-library/react/dist/pure.js:190:26
+ Γ¥» Proxy.render node_modules/@testing-library/react/dist/pure.js:292:10
+ Γ¥» __tests__/components/Navbar.test.tsx:39:9
+     37| 
+     38|     it('renders the logo image', () => {
+     39|         render(<Navbar />);
+       |         ^
+     40|         const logo = screen.getByAltText('Logo');
+     41|         expect(logo).toBeDefined();
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/6]ΓÄ»
+
+ FAIL  __tests__/components/Navbar.test.tsx > Navbar Component > renders all desktop navigation links
+{
+  stack: 'AggregateError: \n' +
+    '    at aggregateErrors (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:551:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:897:24)\n' +
+    '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\act-compat.js:47:25\n' +
+    '    at renderRoot (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:190:26)\n' +
+    '    at Proxy.render (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:292:10)\n' +
+    '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx:45:9\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:145:11\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:919:26\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:1244:20\n' +
+    '    at new Promise (<anonymous>)',
+  errors: [
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/src/components/Navbar.tsx:24:26\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15519:11)\n' +
+        '    at flushPassiveEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:18432:9)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    }
+  ],
+  constructor: 'Function<AggregateError>',
+  name: 'AggregateError',
+  message: '',
+  toString: 'Function<toString>',
+  stacks: [
+    {
+      method: 'aggregateErrors',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 551,
+      column: 11
+    },
+    {
+      method: 'process.env.NODE_ENV.exports.act',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 897,
+      column: 24
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/act-compat.js',
+      line: 47,
+      column: 25
+    },
+    {
+      method: 'renderRoot',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 190,
+      column: 26
+    },
+    {
+      method: 'Proxy.render',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 292,
+      column: 10
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx',
+      line: 45,
+      column: 9
+    }
+  ]
+}
+ Γ¥» aggregateErrors node_modules/react/cjs/react.development.js:551:11
+ Γ¥» process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:897:24
+ Γ¥» node_modules/@testing-library/react/dist/act-compat.js:47:25
+ Γ¥» renderRoot node_modules/@testing-library/react/dist/pure.js:190:26
+ Γ¥» Proxy.render node_modules/@testing-library/react/dist/pure.js:292:10
+ Γ¥» __tests__/components/Navbar.test.tsx:45:9
+     43| 
+     44|     it('renders all desktop navigation links', () => {
+     45|         render(<Navbar />);
+       |         ^
+     46| 
+     47|         // These are the exact names used in navLinks array
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/6]ΓÄ»
+
+ FAIL  __tests__/components/Navbar.test.tsx > Navbar Component > does not render mobile menu by default
+{
+  stack: 'AggregateError: \n' +
+    '    at aggregateErrors (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:551:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:897:24)\n' +
+    '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\act-compat.js:47:25\n' +
+    '    at renderRoot (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:190:26)\n' +
+    '    at Proxy.render (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:292:10)\n' +
+    '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx:58:9\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:145:11\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:919:26\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:1244:20\n' +
+    '    at new Promise (<anonymous>)',
+  errors: [
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/src/components/Navbar.tsx:24:26\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15519:11)\n' +
+        '    at flushPassiveEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:18432:9)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    }
+  ],
+  constructor: 'Function<AggregateError>',
+  name: 'AggregateError',
+  message: '',
+  toString: 'Function<toString>',
+  stacks: [
+    {
+      method: 'aggregateErrors',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 551,
+      column: 11
+    },
+    {
+      method: 'process.env.NODE_ENV.exports.act',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 897,
+      column: 24
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/act-compat.js',
+      line: 47,
+      column: 25
+    },
+    {
+      method: 'renderRoot',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 190,
+      column: 26
+    },
+    {
+      method: 'Proxy.render',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 292,
+      column: 10
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx',
+      line: 58,
+      column: 9
+    }
+  ]
+}
+ Γ¥» aggregateErrors node_modules/react/cjs/react.development.js:551:11
+ Γ¥» process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:897:24
+ Γ¥» node_modules/@testing-library/react/dist/act-compat.js:47:25
+ Γ¥» renderRoot node_modules/@testing-library/react/dist/pure.js:190:26
+ Γ¥» Proxy.render node_modules/@testing-library/react/dist/pure.js:292:10
+ Γ¥» __tests__/components/Navbar.test.tsx:58:9
+     56| 
+     57|     it('does not render mobile menu by default', () => {
+     58|         render(<Navbar />);
+       |         ^
+     59|         const mobileMenuContainer = document.querySelector('.md\\:hiddΓÇª
+     60|         expect(mobileMenuContainer).toBeNull();
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[3/6]ΓÄ»
+
+ FAIL  __tests__/components/Navbar.test.tsx > Navbar Component > opens mobile menu when toggle button is clicked
+{
+  stack: 'AggregateError: \n' +
+    '    at aggregateErrors (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:551:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:897:24)\n' +
+    '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\act-compat.js:47:25\n' +
+    '    at renderRoot (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:190:26)\n' +
+    '    at Proxy.render (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:292:10)\n' +
+    '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx:64:9\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:145:11\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:919:26\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:1244:20\n' +
+    '    at new Promise (<anonymous>)',
+  errors: [
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/src/components/Navbar.tsx:24:26\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15519:11)\n' +
+        '    at flushPassiveEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:18432:9)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    }
+  ],
+  constructor: 'Function<AggregateError>',
+  name: 'AggregateError',
+  message: '',
+  toString: 'Function<toString>',
+  stacks: [
+    {
+      method: 'aggregateErrors',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 551,
+      column: 11
+    },
+    {
+      method: 'process.env.NODE_ENV.exports.act',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 897,
+      column: 24
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/act-compat.js',
+      line: 47,
+      column: 25
+    },
+    {
+      method: 'renderRoot',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 190,
+      column: 26
+    },
+    {
+      method: 'Proxy.render',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 292,
+      column: 10
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx',
+      line: 64,
+      column: 9
+    }
+  ]
+}
+ Γ¥» aggregateErrors node_modules/react/cjs/react.development.js:551:11
+ Γ¥» process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:897:24
+ Γ¥» node_modules/@testing-library/react/dist/act-compat.js:47:25
+ Γ¥» renderRoot node_modules/@testing-library/react/dist/pure.js:190:26
+ Γ¥» Proxy.render node_modules/@testing-library/react/dist/pure.js:292:10
+ Γ¥» __tests__/components/Navbar.test.tsx:64:9
+     62| 
+     63|     it('opens mobile menu when toggle button is clicked', () => {
+     64|         render(<Navbar />);
+       |         ^
+     65|         const toggleButton = screen.getByRole('button', { name: /togglΓÇª
+     66| 
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[4/6]ΓÄ»
+
+ FAIL  __tests__/components/Navbar.test.tsx > Navbar Component > closes mobile menu when a mobile link is clicked
+{
+  stack: 'AggregateError: \n' +
+    '    at aggregateErrors (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:551:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:897:24)\n' +
+    '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\act-compat.js:47:25\n' +
+    '    at renderRoot (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:190:26)\n' +
+    '    at Proxy.render (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:292:10)\n' +
+    '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx:75:9\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:145:11\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:919:26\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:1244:20\n' +
+    '    at new Promise (<anonymous>)',
+  errors: [
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/src/components/Navbar.tsx:24:26\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15519:11)\n' +
+        '    at flushPassiveEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:18432:9)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    }
+  ],
+  constructor: 'Function<AggregateError>',
+  name: 'AggregateError',
+  message: '',
+  toString: 'Function<toString>',
+  stacks: [
+    {
+      method: 'aggregateErrors',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 551,
+      column: 11
+    },
+    {
+      method: 'process.env.NODE_ENV.exports.act',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 897,
+      column: 24
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/act-compat.js',
+      line: 47,
+      column: 25
+    },
+    {
+      method: 'renderRoot',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 190,
+      column: 26
+    },
+    {
+      method: 'Proxy.render',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 292,
+      column: 10
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx',
+      line: 75,
+      column: 9
+    }
+  ]
+}
+ Γ¥» aggregateErrors node_modules/react/cjs/react.development.js:551:11
+ Γ¥» process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:897:24
+ Γ¥» node_modules/@testing-library/react/dist/act-compat.js:47:25
+ Γ¥» renderRoot node_modules/@testing-library/react/dist/pure.js:190:26
+ Γ¥» Proxy.render node_modules/@testing-library/react/dist/pure.js:292:10
+ Γ¥» __tests__/components/Navbar.test.tsx:75:9
+     73| 
+     74|     it('closes mobile menu when a mobile link is clicked', () => {
+     75|         render(<Navbar />);
+       |         ^
+     76|         const toggleButton = screen.getByRole('button', { name: /togglΓÇª
+     77| 
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[5/6]ΓÄ»
+
+ FAIL  __tests__/components/Navbar.test.tsx > Navbar Component > registers IntersectionObserver for all valid scroll sections
+{
+  stack: 'AggregateError: \n' +
+    '    at aggregateErrors (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:551:11)\n' +
+    '    at process.env.NODE_ENV.exports.act (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react\\cjs\\react.development.js:897:24)\n' +
+    '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\act-compat.js:47:25\n' +
+    '    at renderRoot (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:190:26)\n' +
+    '    at Proxy.render (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\@testing-library\\react\\dist\\pure.js:292:10)\n' +
+    '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx:94:9\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:145:11\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:919:26\n' +
+    '    at file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/runner/dist/index.js:1244:20\n' +
+    '    at new Promise (<anonymous>)',
+  errors: [
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at createObserver (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:30:22)\n' +
+        '    at observe (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:49:40)\n' +
+        '    at C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\next\\dist\\client\\use-intersection.js:78:35\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    },
+    {
+      stack: 'TypeError: () => value is not a constructor\n' +
+        '    at new Mock (file:///C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@vitest/spy/dist/index.js:262:27)\n' +
+        '    at C:/Users/aaadn/OneDrive/Desktop/Portfolio/src/components/Navbar.tsx:24:26\n' +
+        '    at Object.react_stack_bottom_frame (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:25989:20)\n' +
+        '    at runWithFiberInDEV (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:874:13)\n' +
+        '    at commitHookEffectListMount (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13249:29)\n' +
+        '    at commitHookPassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:13336:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15484:13)\n' +
+        '    at recursivelyTraversePassiveMountEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15439:11)\n' +
+        '    at commitPassiveMountOnFiber (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:15519:11)\n' +
+        '    at flushPassiveEffects (C:\\Users\\aaadn\\OneDrive\\Desktop\\Portfolio\\node_modules\\react-dom\\cjs\\react-dom-client.development.js:18432:9)',
+      message: '() => value is not a constructor',
+      constructor: 'Function<TypeError>',
+      name: 'TypeError',
+      toString: 'Function<toString>'
+    }
+  ],
+  constructor: 'Function<AggregateError>',
+  name: 'AggregateError',
+  message: '',
+  toString: 'Function<toString>',
+  stacks: [
+    {
+      method: 'aggregateErrors',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 551,
+      column: 11
+    },
+    {
+      method: 'process.env.NODE_ENV.exports.act',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/react/cjs/react.development.js',
+      line: 897,
+      column: 24
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/act-compat.js',
+      line: 47,
+      column: 25
+    },
+    {
+      method: 'renderRoot',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 190,
+      column: 26
+    },
+    {
+      method: 'Proxy.render',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/node_modules/@testing-library/react/dist/pure.js',
+      line: 292,
+      column: 10
+    },
+    {
+      method: '',
+      file: 'C:/Users/aaadn/OneDrive/Desktop/Portfolio/__tests__/components/Navbar.test.tsx',
+      line: 94,
+      column: 9
+    }
+  ]
+}
+ Γ¥» aggregateErrors node_modules/react/cjs/react.development.js:551:11
+ Γ¥» process.env.NODE_ENV.exports.act node_modules/react/cjs/react.development.js:897:24
+ Γ¥» node_modules/@testing-library/react/dist/act-compat.js:47:25
+ Γ¥» renderRoot node_modules/@testing-library/react/dist/pure.js:190:26
+ Γ¥» Proxy.render node_modules/@testing-library/react/dist/pure.js:292:10
+ Γ¥» __tests__/components/Navbar.test.tsx:94:9
+     92| 
+     93|     it('registers IntersectionObserver for all valid scroll sections',ΓÇª
+     94|         render(<Navbar />);
+       |         ^
+     95|         expect(mockIntersectionObserver).toHaveBeenCalled();
+     96|     });
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[6/6]ΓÄ»
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m6 failed[39m[22m[90m (6)[39m
+[2m   Start at [22m 23:47:34
+[2m   Duration [22m 2.95s[2m (transform 163ms, setup 66ms, import 663ms, tests 120ms, environment 1.67s)[22m
+
