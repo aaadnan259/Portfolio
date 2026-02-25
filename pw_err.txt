@@ -1,0 +1,183 @@
+[WebServer] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[WebServer] ΓÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+[WebServer]  We detected multiple lockfiles and selected the directory of C:\Users\aaadn\package-lock.json as the root directory.
+[WebServer]  To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+[WebServer]    See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+[WebServer]  Detected additional lockfiles: 
+[WebServer]    * C:\Users\aaadn\OneDrive\Desktop\Portfolio\package-lock.json
+[WebServer] 
+[WebServer] {"level":"warn","timestamp":"2026-02-25T04:50:42.300Z","message":"UPSTASH_REDIS_REST_URL or UPSTASH_REDIS_REST_TOKEN not found. Falling back to in-memory rate limiting. This provides limited protection in serverless environments."}
+
+Running 12 tests using 11 workers
+
+  Γ£ÿ   1 [chromium] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links (3ms)
+  Γ£ÿ   2 [webkit] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works (10ms)
+  Γ£ÿ   3 [chromium] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works (5ms)
+  Γ£ÿ   4 [firefox] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works (5ms)
+  Γ£ÿ   5 [webkit] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links (4ms)
+  Γ£ÿ   6 [chromium] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes (4ms)
+  Γ£ÿ   7 [firefox] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes (4ms)
+  Γ£ÿ   8 [firefox] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links (4ms)
+  Γ£ÿ   9 [firefox] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM (4ms)
+  Γ£ÿ  10 [chromium] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM (3ms)
+  Γ£ÿ  11 [webkit] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes (3ms)
+  Γ£ÿ  12 [webkit] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM (2ms)
+
+
+  1) [chromium] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  2) [chromium] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  3) [chromium] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  4) [chromium] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  5) [firefox] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  6) [firefox] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  7) [firefox] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  8) [firefox] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\firefox-1509\firefox\firefox.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  9) [webkit] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  10) [webkit] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  11) [webkit] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  12) [webkit] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\aaadn\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ΓòöΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòù
+    Γòæ Looks like Playwright Test or Playwright was just installed or updated. Γòæ
+    Γòæ Please run the following command to download new browsers:              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ     npx playwright install                                              Γòæ
+    Γòæ                                                                         Γòæ
+    Γòæ <3 Playwright Team                                                      Γòæ
+    ΓòÜΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓò¥
+
+  12 failed
+    [chromium] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links 
+    [chromium] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works 
+    [chromium] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes 
+    [chromium] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM 
+    [firefox] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links 
+    [firefox] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works 
+    [firefox] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes 
+    [firefox] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM 
+    [webkit] ΓÇ║ e2e\navigation.spec.ts:9:9 ΓÇ║ Navigation User Journey ΓÇ║ Navbar renders all expected links 
+    [webkit] ΓÇ║ e2e\navigation.spec.ts:22:9 ΓÇ║ Navigation User Journey ΓÇ║ Smooth scrolling navigation works 
+    [webkit] ΓÇ║ e2e\navigation.spec.ts:35:9 ΓÇ║ Navigation User Journey ΓÇ║ Mobile menu toggle opens and closes 
+    [webkit] ΓÇ║ e2e\navigation.spec.ts:66:9 ΓÇ║ Navigation User Journey ΓÇ║ All primary sections manifest in the DOM 
