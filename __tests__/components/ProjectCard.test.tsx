@@ -5,6 +5,7 @@ import { ProjectItem } from '../../src/types'
 
 // Mock dependencies
 vi.mock('next/image', () => ({
+    // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
     default: ({ fill, ...props }: any) => <img {...props} />
 }))
 
@@ -62,9 +63,9 @@ describe('ProjectCard Component', () => {
     test('renders video when video prop is present', () => {
         const videoProject: ProjectItem = {
             ...mockProject,
-            video: '/videos/test-video.mp4',
-            image: undefined
+            video: '/videos/test-video.mp4'
         }
+        delete videoProject.image;
 
         const { container } = render(<ProjectCard project={videoProject} index={0} />)
 
@@ -84,10 +85,10 @@ describe('ProjectCard Component', () => {
 
     test('renders placeholder image when image is missing', () => {
         const noImageProject: ProjectItem = {
-            ...mockProject,
-            image: undefined,
-            video: undefined
+            ...mockProject
         }
+        delete noImageProject.image;
+        delete noImageProject.video;
 
         render(<ProjectCard project={noImageProject} index={0} />)
 
@@ -97,7 +98,7 @@ describe('ProjectCard Component', () => {
     })
 
     test('does not render github/demo link when missing', () => {
-         const noLinksProject: ProjectItem = {
+        const noLinksProject: ProjectItem = {
             ...mockProject,
             links: {
                 demo: '',

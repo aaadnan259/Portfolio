@@ -29,11 +29,8 @@ describe('Webhook API', () => {
     beforeEach(() => {
         vi.clearAllMocks();
         // Reset our mocked env for each test
-        // @ts-ignore
         env.RESEND_API_KEY = 're_123456789';
-        // @ts-ignore
         env.WEBHOOK_SECRET = 'test_secret';
-        // @ts-ignore
         env.CONTACT_EMAIL = 'test@example.com';
     });
 
@@ -87,8 +84,7 @@ describe('Webhook API', () => {
     });
 
     it('should return 500 if CONTACT_EMAIL is missing', async () => {
-        // @ts-ignore
-        delete env.CONTACT_EMAIL;
+        delete (env as Partial<NodeJS.ProcessEnv>).CONTACT_EMAIL;
 
         const req = new Request('http://localhost:3000/api/webhook/email?secret=test_secret', {
             method: 'POST',

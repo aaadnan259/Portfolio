@@ -57,7 +57,7 @@ export default function RootLayout({
           </LoadingProvider>
           <BackToTop />
           <Analytics />
-          <SpeedInsights />
+          <SpeedInsights debug={process.env.NODE_ENV === 'development'} />
         </Providers>
       </body>
     </html>

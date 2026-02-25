@@ -28,7 +28,7 @@ export interface ProjectItem {
 
 export interface SkillItem {
     name: string;
-    icon: string;
+    icon: React.ElementType;
 }
 
 export interface SkillGroup {

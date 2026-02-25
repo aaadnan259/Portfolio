@@ -31,8 +31,8 @@ describe("Rate Limit Utility", () => {
     });
 
     const getRateLimitModule = async () => {
-        const module = await import("../../src/lib/rate-limit");
-        return module.checkRateLimit;
+        const rateLimitModule = await import("../../src/lib/rate-limit");
+        return rateLimitModule.checkRateLimit;
     };
 
     describe("Upstash Strategy", () => {
