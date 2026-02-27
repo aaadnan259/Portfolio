@@ -57,6 +57,7 @@ export async function POST(request: Request) {
 
         // Sanitize inputs for HTML context
         const safeName = escapeHtml(name);
+        const safeEmail = escapeHtml(email);
         const safeMessage = escapeHtml(message);
 
         // Send email using Resend
@@ -71,7 +72,7 @@ export async function POST(request: Request) {
                     </h2>
                     <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
                         <p style="margin: 10px 0;"><strong>Name:</strong> ${safeName}</p>
-                        <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
+                        <p style="margin: 10px 0;"><strong>Email:</strong> ${safeEmail}</p>
                         <p style="margin: 10px 0;"><strong>Message:</strong></p>
                         <div style="background-color: white; padding: 15px; border-left: 4px solid #4F46E5; margin-top: 10px;">
                             ${safeMessage.replace(/\n/g, '<br>')}
