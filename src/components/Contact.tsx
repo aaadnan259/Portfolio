@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { cn } from "@/lib/utils";
+import { logger } from "@/lib/logger";
 
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
@@ -49,7 +50,7 @@ export default function Contact() {
             } else {
                 setStatus("error");
                 setErrorMessage(result.error || "Something went wrong");
-                console.error("Error:", result.error);
+                logger.error("Error:", result.error);
                 setTimeout(() => {
                     setStatus("idle");
                     setErrorMessage("");
@@ -58,7 +59,7 @@ export default function Contact() {
         } catch (error) {
             setStatus("error");
             setErrorMessage("Network error. Please try again.");
-            console.error("Error submitting form:", error);
+            logger.error("Error submitting form:", error);
             setTimeout(() => {
                 setStatus("idle");
                 setErrorMessage("");
