@@ -1,7 +1,17 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { envSchema } from '@/lib/env';
-
+import { describe, it, expect, vi, beforeEach, afterEach, beforeAll, afterAll } from 'vitest';
 describe('envSchema validation', () => {
+    let envSchema: typeof import('@/lib/env').envSchema;
+
+    beforeAll(async () => {
+        vi.stubEnv('RESEND_API_KEY', 'dummy');
+        vi.stubEnv('CONTACT_EMAIL', 'dummy@example.com');
+        const mod = await import('@/lib/env');
+        envSchema = mod.envSchema;
+    });
+
+    afterAll(() => {
+        vi.unstubAllEnvs();
+    });
     it('should validate correctly with valid required vars', () => {
         const validEnv = {
             RESEND_API_KEY: 'test-key',
@@ -37,7 +47,7 @@ describe('envSchema validation', () => {
         const result = envSchema.safeParse(invalidEnv);
         expect(result.success).toBe(false);
         if (!result.success) {
-            expect(result.error.errors.some(e => e.message === 'RESEND_API_KEY is required')).toBe(true);
+            expect(result.error.issues.some(e => e.message === 'RESEND_API_KEY is required')).toBe(true);
         }
     });
 
@@ -48,7 +58,7 @@ describe('envSchema validation', () => {
         const result = envSchema.safeParse(invalidEnv);
         expect(result.success).toBe(false);
         if (!result.success) {
-            expect(result.error.errors.some(e => e.message === 'A valid CONTACT_EMAIL is required')).toBe(true);
+            expect(result.error.issues.some(e => e.message === 'A valid CONTACT_EMAIL is required')).toBe(true);
         }
     });
 
@@ -60,7 +70,7 @@ describe('envSchema validation', () => {
         const result = envSchema.safeParse(invalidEnv);
         expect(result.success).toBe(false);
         if (!result.success) {
-            expect(result.error.errors.some(e => e.message === 'A valid CONTACT_EMAIL is required')).toBe(true);
+            expect(result.error.issues.some(e => e.message === 'A valid CONTACT_EMAIL is required')).toBe(true);
         }
     });
 
@@ -73,7 +83,7 @@ describe('envSchema validation', () => {
         const result = envSchema.safeParse(invalidEnv);
         expect(result.success).toBe(false);
         if (!result.success) {
-            expect(result.error.errors.some(e => e.message === 'A valid NEXT_PUBLIC_SITE_URL is required')).toBe(true);
+            expect(result.error.issues.some(e => e.message === 'A valid NEXT_PUBLIC_SITE_URL is required')).toBe(true);
         }
     });
 });
