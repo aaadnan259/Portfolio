@@ -5,7 +5,7 @@ permissions:
   contents: read
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       RESEND_API_KEY: re_mock_key_123456
       WEBHOOK_SECRET: test_secret
