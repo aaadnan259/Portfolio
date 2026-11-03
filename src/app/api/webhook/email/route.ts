@@ -47,6 +47,18 @@ export async function POST(request: Request) {
 
     try {
         const body = await request.json();
+
+        // Ignore Resend's own delivery-event callbacks (email.sent, email.delivered, ...).
+        // Forwarding them sends a new email, which fires another event back here and
+        // creates an infinite loop that burns the whole daily sending quota.
+        if (typeof body?.type === "string" && body.type.startsWith("email.")) {
+            logger.info(`Ignoring Resend event callback: ${body.type}`);
+            return NextResponse.json(
+                { message: "Event ignored" },
+                { status: 200 }
+            );
+        }
+
         // Allow flexible payload structure, but look for common email fields
         const { subject, from, text, html, message, name, email } = body;
 
