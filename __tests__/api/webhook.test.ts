@@ -83,6 +83,21 @@ describe('Webhook API', () => {
         }));
     });
 
+    it('should ignore Resend event callbacks to avoid a send loop', async () => {
+        const req = new Request('http://localhost:3000/api/webhook/email?secret=test_secret', {
+            method: 'POST',
+            body: JSON.stringify({
+                type: 'email.sent',
+                created_at: '2026-11-03T11:39:11.029Z',
+                data: { subject: '[Webhook] No Subject', to: ['test@example.com'] },
+            }),
+        });
+
+        const res = await POST(req);
+        expect(res.status).toBe(200);
+        expect(mockSend).not.toHaveBeenCalled();
+    });
+
     it('should return 500 if CONTACT_EMAIL is missing', async () => {
         delete (env as Partial<NodeJS.ProcessEnv>).CONTACT_EMAIL;
 
