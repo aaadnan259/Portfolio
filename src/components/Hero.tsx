@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -13,8 +13,8 @@ export default function Hero() {
         >
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-30 animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl opacity-30 animate-pulse delay-1000" />
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-30 motion-safe:animate-pulse" />
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl opacity-30 motion-safe:animate-pulse delay-1000" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -37,7 +37,7 @@ export default function Hero() {
                                 />
                             </div>
                             {/* Decorative ring */}
-                            <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse" />
+                            <div className="absolute inset-0 rounded-full border-2 border-primary/30 motion-safe:animate-pulse" />
                         </div>
                     </motion.div>
 
@@ -48,15 +48,15 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <h2 className="text-primary font-medium text-lg mb-4 tracking-wide uppercase">
+                            <p className="text-primary font-medium text-lg mb-4 tracking-wide uppercase">
                                 Hello, I&apos;m
-                            </h2>
+                            </p>
                             <h1 className="text-5xl md:text-7xl font-bold text-text-light mb-6 tracking-tight">
                                 Adnan Ashraf
                             </h1>
-                            <h3 className="text-2xl md:text-3xl text-text mb-8 font-light">
+                            <p className="text-2xl md:text-3xl text-text mb-8 font-light">
                                 <span className="text-secondary">AI / Machine Learning Engineer</span>
-                            </h3>
+                            </p>
                         </motion.div>
 
                         <motion.p
@@ -89,6 +89,26 @@ export default function Hero() {
                                 Download Resume
                                 <Download size={18} />
                             </a>
+                            <div className="flex items-center gap-4 sm:ml-2">
+                                <a
+                                    href="https://github.com/aaadnan259"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub"
+                                    className="p-2 text-text/70 hover:text-primary transition-colors"
+                                >
+                                    <Github size={24} />
+                                </a>
+                                <a
+                                    href="https://linkedin.com/in/adnan-ashraf-259"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                    className="p-2 text-text/70 hover:text-primary transition-colors"
+                                >
+                                    <Linkedin size={24} />
+                                </a>
+                            </div>
                         </motion.div>
                     </div>
                 </div>

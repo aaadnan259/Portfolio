@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import { Providers } from "@/components/Providers";
-import { LoadingProvider } from "@/components/LoadingProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,9 +51,7 @@ export default function RootLayout({
       <body className={cn(inter.className, "bg-background text-text")}>
         <Providers>
           <ScrollProgress />
-          <LoadingProvider>
-            {children}
-          </LoadingProvider>
+          {children}
           <BackToTop />
           <Analytics />
           <SpeedInsights debug={process.env.NODE_ENV === 'development'} />
