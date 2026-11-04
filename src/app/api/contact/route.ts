@@ -5,6 +5,7 @@ import { escapeHtml } from "@/lib/utils";
 import { env } from "@/lib/env";
 import { logger } from "@/lib/logger";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { consumeSendBudget } from "@/lib/send-budget";
 
 const contactSchema = z.object({
     name: z.string().min(1, "Name is required").max(100, "Name is too long"),
@@ -41,6 +42,16 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
 
+        // Honeypot: the form has a hidden "website" field that people never see.
+        // Bots that fill every input get a fake success and no email is sent.
+        if (typeof body?.website === "string" && body.website.trim() !== "") {
+            logger.warn("Contact form honeypot triggered; dropping submission");
+            return NextResponse.json(
+                { message: "Message sent successfully" },
+                { status: 200 }
+            );
+        }
+
         // Validate input using Zod
         const result = contactSchema.safeParse(body);
 
@@ -55,14 +66,25 @@ export async function POST(request: Request) {
 
         const { name, email, message } = result.data;
 
+        const { success: withinBudget } = await consumeSendBudget("contact");
+        if (!withinBudget) {
+            logger.warn("Contact daily send budget exhausted");
+            return NextResponse.json(
+                { error: "The contact form is temporarily unavailable. Please try again tomorrow." },
+                { status: 503 }
+            );
+        }
+
         // Sanitize inputs for HTML context
         const safeName = escapeHtml(name);
+        const safeEmail = escapeHtml(email);
         const safeMessage = escapeHtml(message);
 
         // Send email using Resend
         const { data, error } = await resend.emails.send({
             from: "Portfolio Contact <onboarding@resend.dev>",
             to: contactEmail,
+            replyTo: email,
             subject: `New Contact Form Submission from ${safeName}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -71,7 +93,7 @@ export async function POST(request: Request) {
                     </h2>
                     <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
                         <p style="margin: 10px 0;"><strong>Name:</strong> ${safeName}</p>
-                        <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
+                        <p style="margin: 10px 0;"><strong>Email:</strong> ${safeEmail}</p>
                         <p style="margin: 10px 0;"><strong>Message:</strong></p>
                         <div style="background-color: white; padding: 15px; border-left: 4px solid #4F46E5; margin-top: 10px;">
                             ${safeMessage.replace(/\n/g, '<br>')}
@@ -88,7 +110,7 @@ export async function POST(request: Request) {
         if (error) {
             logger.error("Resend error:", error);
             return NextResponse.json(
-                { error: `Failed to send email: ${error.message || JSON.stringify(error)}` },
+                { error: "Failed to send email. Please try again later." },
                 { status: 500 }
             );
         }

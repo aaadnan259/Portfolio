@@ -193,6 +193,37 @@ describe("Contact API", () => {
         const data = await response.json();
 
         expect(response.status).toBe(500);
-        expect(data.error).toBe("Failed to send email: Simulated Resend error");
+        expect(data.error).toBe("Failed to send email. Please try again later.");
+    });
+
+    it("should silently drop submissions that fill the honeypot field", async () => {
+        const request = new Request("http://localhost/api/contact", {
+            method: "POST",
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
+            body: JSON.stringify({
+                name: "Bot",
+                email: "bot@example.com",
+                message: "Buy now",
+                website: "https://spam.example",
+            })
+        });
+
+        const response = await POST(request);
+        expect(response.status).toBe(200);
+        expect(mocks.send).not.toHaveBeenCalled();
+    });
+
+    it("should set replyTo to the sender and escape the email in HTML", async () => {
+        mocks.send.mockResolvedValue({ data: { id: "123" }, error: null });
+
+        const request = new Request("http://localhost/api/contact", {
+            method: "POST",
+            headers: { "x-forwarded-for": `127.0.0.${ipCounter++}` },
+            body: JSON.stringify({ name: "Jane", email: "jane@example.com", message: "Hi" })
+        });
+
+        const response = await POST(request);
+        expect(response.status).toBe(200);
+        expect(mocks.send.mock.calls[0][0].replyTo).toBe("jane@example.com");
     });
 });

@@ -4,6 +4,22 @@ import { escapeHtml } from "@/lib/utils";
 import { logger } from "@/lib/logger";
 import crypto from "node:crypto";
 import { env } from "@/lib/env";
+import { checkRateLimit } from "@/lib/rate-limit";
+import { consumeSendBudget } from "@/lib/send-budget";
+
+const MAX_BODY_BYTES = 50_000;
+
+// Prefer a header so the secret stays out of URLs (and out of access logs,
+// browser history and screenshots). `?secret=` is still accepted for existing callers.
+function getProvidedSecret(request: Request): string {
+    const auth = request.headers.get("authorization");
+    if (auth?.toLowerCase().startsWith("bearer ")) {
+        return auth.slice(7).trim();
+    }
+    const header = request.headers.get("x-webhook-secret");
+    if (header) return header;
+    return new URL(request.url).searchParams.get("secret") || "";
+}
 
 export async function POST(request: Request) {
     const apiKey = env.RESEND_API_KEY;
@@ -27,8 +43,7 @@ export async function POST(request: Request) {
         );
     }
 
-    const { searchParams } = new URL(request.url);
-    const secret = searchParams.get("secret") || "";
+    const secret = getProvidedSecret(request);
 
     // Use constant-time comparison to prevent timing attacks
     // We hash both strings to handle variable lengths safely with timingSafeEqual
@@ -43,10 +58,27 @@ export async function POST(request: Request) {
         );
     }
 
+    const forwardedFor = request.headers.get("x-forwarded-for");
+    const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "unknown";
+    const { success: withinRateLimit } = await checkRateLimit(`webhook:${ip}`);
+    if (!withinRateLimit) {
+        return NextResponse.json(
+            { error: "Too many requests" },
+            { status: 429 }
+        );
+    }
+
     const resend = new Resend(apiKey);
 
     try {
-        const body = await request.json();
+        const rawText = await request.text();
+        if (new TextEncoder().encode(rawText).length > MAX_BODY_BYTES) {
+            return NextResponse.json(
+                { error: "Payload too large" },
+                { status: 413 }
+            );
+        }
+        const body = JSON.parse(rawText);
 
         // Ignore Resend's own delivery-event callbacks (email.sent, email.delivered, ...).
         // Forwarding them sends a new email, which fires another event back here and
@@ -56,6 +88,15 @@ export async function POST(request: Request) {
             return NextResponse.json(
                 { message: "Event ignored" },
                 { status: 200 }
+            );
+        }
+
+        const { success: withinBudget } = await consumeSendBudget("webhook");
+        if (!withinBudget) {
+            logger.warn("Webhook daily send budget exhausted; not forwarding");
+            return NextResponse.json(
+                { error: "Daily forwarding limit reached" },
+                { status: 429 }
             );
         }
 
@@ -108,7 +149,7 @@ export async function POST(request: Request) {
         if (error) {
             logger.error("Resend error:", error);
             return NextResponse.json(
-                { error: `Failed to forward email: ${error.message}` },
+                { error: "Failed to forward email" },
                 { status: 500 }
             );
         }
