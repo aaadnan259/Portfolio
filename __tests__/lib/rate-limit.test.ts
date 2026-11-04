@@ -68,10 +68,30 @@ describe("Rate Limit Utility", () => {
         });
     });
 
+    describe("Vercel KV_* env var names", () => {
+        beforeEach(() => {
+            delete process.env.UPSTASH_REDIS_REST_URL;
+            delete process.env.UPSTASH_REDIS_REST_TOKEN;
+            process.env.KV_REST_API_URL = "https://fake.url";
+            process.env.KV_REST_API_TOKEN = "fake-token";
+        });
+
+        it("should use Upstash when only KV_REST_API_* is set", async () => {
+            checkRateLimit = await getRateLimitModule();
+            mockLimit.mockResolvedValueOnce({ success: false });
+
+            const result = await checkRateLimit("4.4.4.4");
+            expect(result).toEqual({ success: false });
+            expect(mockLimit).toHaveBeenCalledWith("4.4.4.4");
+        });
+    });
+
     describe("LRU Cache Fallback", () => {
         beforeEach(() => {
             delete process.env.UPSTASH_REDIS_REST_URL;
             delete process.env.UPSTASH_REDIS_REST_TOKEN;
+            delete process.env.KV_REST_API_URL;
+            delete process.env.KV_REST_API_TOKEN;
         });
 
         it("should allow first 3 requests and block the 4th", async () => {

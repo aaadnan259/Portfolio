@@ -7,10 +7,14 @@ import { logger } from "@/lib/logger";
 let checkRateLimit: (identifier: string) => Promise<{ success: boolean }>;
 
 // Use Upstash Redis if available (Best for serverless/distributed)
-if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+// Vercel's Upstash integration names these KV_REST_API_*; a direct Upstash setup uses UPSTASH_REDIS_REST_*.
+const redisUrl = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
+
+if (redisUrl && redisToken) {
     const redis = new Redis({
-        url: process.env.UPSTASH_REDIS_REST_URL,
-        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+        url: redisUrl,
+        token: redisToken,
     });
 
     const ratelimit = new Ratelimit({
@@ -36,7 +40,7 @@ if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) 
     // Fallback to in-memory LRU Cache (Per-instance, ephemeral)
     // Warn only once or in logs
     if (process.env.NODE_ENV === "production") {
-        logger.warn("UPSTASH_REDIS_REST_URL or UPSTASH_REDIS_REST_TOKEN not found. Falling back to in-memory rate limiting. This provides limited protection in serverless environments.");
+        logger.warn("Upstash Redis env vars (UPSTASH_REDIS_REST_* or KV_REST_API_*) not found. Falling back to in-memory rate limiting. This provides limited protection in serverless environments.");
     }
 
     const tokenCache = new LRUCache<string, number>({
