@@ -1,6 +1,6 @@
 import { Briefcase, GraduationCap } from "lucide-react";
 import { ExperienceItem, ProjectItem, SkillGroup } from "@/types";
-import { PythonIcon, JavaIcon, JavaScriptIcon, Html5Icon, ReactIcon, NextJsIcon, TailwindIcon, GithubIcon, CIcon, SqlIcon, DjangoIcon, PandasIcon, ScikitLearnIcon, JiraIcon, AwsIcon, VsCodeIcon, PostgresqlIcon, RestApiIcon, MachineLearningIcon, DataAnalyticsIcon, AgileIcon } from "@/components/Icons";
+import { PythonIcon, JavaIcon, JavaScriptIcon, Html5Icon, ReactIcon, NextJsIcon, TailwindIcon, GithubIcon, CIcon, SqlIcon, DjangoIcon, PandasIcon, ScikitLearnIcon, JiraIcon, AwsIcon, VsCodeIcon, PostgresqlIcon, RestApiIcon, MachineLearningIcon, NlpIcon, DataAnalyticsIcon, AgileIcon, OopIcon } from "@/components/Icons";
 export const experiences: ExperienceItem[] = [
     {
         title: "Software Engineering Intern",
@@ -106,10 +106,10 @@ export const skills: SkillGroup[] = [
         items: [
             { name: "RESTful APIs", icon: RestApiIcon },
             { name: "Machine Learning", icon: MachineLearningIcon },
-            { name: "NLP", icon: PythonIcon },
+            { name: "NLP", icon: NlpIcon },
             { name: "Data Analytics", icon: DataAnalyticsIcon },
             { name: "Agile/Scrum", icon: AgileIcon },
-            { name: "OOP", icon: JavaIcon }
+            { name: "OOP", icon: OopIcon }
         ]
     }
 ];
