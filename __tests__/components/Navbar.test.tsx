@@ -50,7 +50,7 @@ describe('Navbar Component', () => {
         render(<Navbar />);
 
         // These are the exact names used in navLinks array
-        const links = ['Home', 'About', 'Experience', 'Projects', 'Contact'];
+        const links = ['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'];
 
         links.forEach(linkText => {
             // we have duplicate text between mobile and desktop navs, so we check getAllByText
