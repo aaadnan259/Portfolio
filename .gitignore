@@ -45,3 +45,12 @@ load_test_results.txt
 
 # agent
 .agent
+
+# local test/lint output
+/playwright-report/
+/test-results/
+/blob-report/
+*.log
+eslint-report.*
+pw_err.txt
+test_output.txt
