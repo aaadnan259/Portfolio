@@ -12,6 +12,8 @@ const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
     email: z.string().email("Please enter a valid email address"),
     message: z.string().min(1, "Message is required").max(5000, "Message must be less than 5000 characters"),
+    // Honeypot: hidden from people, often filled in by bots. The API drops submissions that set it.
+    website: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -141,6 +143,16 @@ export default function Contact() {
                         className="bg-surface p-8 rounded-2xl border border-surface/50"
                     >
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                            <div aria-hidden="true" className="absolute -left-[10000px] w-px h-px overflow-hidden">
+                                <label htmlFor="website">Website</label>
+                                <input
+                                    type="text"
+                                    id="website"
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                    {...register("website")}
+                                />
+                            </div>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-text/80 mb-2">Name</label>
                                 <input
